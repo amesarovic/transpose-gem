@@ -99,8 +99,8 @@
       "metadata" : {
         "label" : "products_50",
         "slug" : "products_50",
-        "x" : -480,
-        "y" : -220,
+        "x" : -1260,
+        "y" : -1660,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -126,8 +126,8 @@
       "metadata" : {
         "label" : "AndreTranspose_1",
         "slug" : "AndreTranspose_1",
-        "x" : -180,
-        "y" : -220,
+        "x" : -960,
+        "y" : -1660,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -189,7 +189,8 @@
         "autoUpdateOnRun" : false
       },
       "properties" : {
-        "my_property" : "default value of my property"
+        "my_property" : "default value of my property",
+        "pivot_column" : "pivot column"
       }
     }
   },

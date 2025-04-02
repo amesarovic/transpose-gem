@@ -97,6 +97,12 @@
     "sourcePort" : "k5KSFGfKR5nBOFS2FxcCg$$0rFm35jU5NPdTW85NIFjo",
     "target" : "6E_iKmVuDMoye7Ruezpl7$$keTMKU_B9HDaZx97g3w6M",
     "targetPort" : "BXHozm-9Rh42evBglQjqk$$AdlQSeEQs59OUb9J4NaRB"
+  }, {
+    "id" : "X87PeiYbKbx0xUiYRACB5$$GL_U77ISNiJ5mUDHI0Nsr",
+    "source" : "bQZXbZRCmJ5zcYl-DIju4$$nsJraY7bNZeMZbyGEBkq7",
+    "sourcePort" : "Z4PuSkyn973KrerJh6Ef2$$NbChJjuNhj6UldJeVngCf",
+    "target" : "z7gucPFnD_I8J9Or-AfAT$$tjNBwNX0VQbUIAtpF2HRe",
+    "targetPort" : "tf7B5eCLw9jTxGllohWiO$$KDNB6IYGEFvYuV6IMPeZG"
   } ],
   "processes" : {
     "6E_iKmVuDMoye7Ruezpl7$$keTMKU_B9HDaZx97g3w6M" : {
@@ -105,8 +111,8 @@
       "metadata" : {
         "label" : "concat_zn_indus",
         "slug" : "concat_zn_indus",
-        "x" : -1520,
-        "y" : -900,
+        "x" : -1700,
+        "y" : -920,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -303,11 +309,42 @@
           }
         } ],
         "activeTab" : "transformations",
-        "columnsSelector" : [ "BXHozm-9Rh42evBglQjqk$$AdlQSeEQs59OUb9J4NaRB##indus", "BXHozm-9Rh42evBglQjqk$$AdlQSeEQs59OUb9J4NaRB##zn" ]
+        "columnsSelector" : [ "BXHozm-9Rh42evBglQjqk$$AdlQSeEQs59OUb9J4NaRB##zn", "BXHozm-9Rh42evBglQjqk$$AdlQSeEQs59OUb9J4NaRB##indus" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.40&projectSubscriptionProjectId=12654&path=gems/SchemaTransform",
         "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "z7gucPFnD_I8J9Or-AfAT$$tjNBwNX0VQbUIAtpF2HRe" : {
+      "id" : "z7gucPFnD_I8J9Or-AfAT$$tjNBwNX0VQbUIAtpF2HRe",
+      "component" : "AndreLimitGit",
+      "metadata" : {
+        "label" : "AndreLimitGit_1",
+        "slug" : "AndreLimitGit_1",
+        "x" : -1720,
+        "y" : -1220,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "tf7B5eCLw9jTxGllohWiO$$KDNB6IYGEFvYuV6IMPeZG",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "v23rplJtkslmBplm2gk7j$$X0W3LRpvT2ZtybHZ-mc5L",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "limit" : "10"
       }
     },
     "oJazphPsS8PH8FeZyCbQx$$Dmzg5rcefO4i2v3jVFj06" : {
@@ -316,8 +353,8 @@
       "metadata" : {
         "label" : "SampleRows_1",
         "slug" : "SampleRows_1",
-        "x" : -1200,
-        "y" : -900,
+        "x" : -1380,
+        "y" : -880,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -354,8 +391,8 @@
       "metadata" : {
         "label" : "customers",
         "slug" : "customers",
-        "x" : -1800,
-        "y" : -900,
+        "x" : -1980,
+        "y" : -920,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -383,8 +420,8 @@
       "metadata" : {
         "label" : "AndreLimitDoc_1",
         "slug" : "AndreLimitDoc_1",
-        "x" : -1220,
-        "y" : -600,
+        "x" : -1720,
+        "y" : -1380,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -414,8 +451,8 @@
       "metadata" : {
         "label" : "limit_to_50",
         "slug" : "limit_to_50",
-        "x" : -1440,
-        "y" : -600,
+        "x" : -1940,
+        "y" : -1380,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -444,6 +481,43 @@
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.40&projectSubscriptionProjectId=12654&path=gems/Limit",
         "projectName" : "ProphecySparkBasicsPython"
       }
+    },
+    "bQZXbZRCmJ5zcYl-DIju4$$nsJraY7bNZeMZbyGEBkq7" : {
+      "id" : "bQZXbZRCmJ5zcYl-DIju4$$nsJraY7bNZeMZbyGEBkq7",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "limit_to_50_1",
+        "slug" : "limit_to_50_1",
+        "x" : -1940,
+        "y" : -1220,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Restricts the dataset to the first 50 records for streamlined analysis.",
+        "autoUpdateComment" : true,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "JFDjMOnUWUOJHpA9awjUj$$4x55i3lGU04surzsUKk8j",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Z4PuSkyn973KrerJh6Ef2$$NbChJjuNhj6UldJeVngCf",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "limit" : "50"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.40&projectSubscriptionProjectId=12654&path=gems/Limit",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
     }
   },
   "ports" : {
@@ -454,6 +528,38 @@
     "autoUpdateOnRun" : false
   },
   "diagnostics" : [ {
+    "property" : "$.workflow.processes.bQZXbZRCmJ5zcYl-DIju4$$nsJraY7bNZeMZbyGEBkq7.ports.inputs[0]",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Please connect input port in0",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.z7gucPFnD_I8J9Or-AfAT$$tjNBwNX0VQbUIAtpF2HRe",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
     "property" : "$.workflow.processes.oJazphPsS8PH8FeZyCbQx$$Dmzg5rcefO4i2v3jVFj06.ports.inputs[0]",
     "range" : {
       "start" : {

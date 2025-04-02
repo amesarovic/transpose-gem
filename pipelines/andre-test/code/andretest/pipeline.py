@@ -9,6 +9,8 @@ from andretest.graph import *
 def pipeline(spark: SparkSession) -> None:
     df_customers = customers(spark)
     df_concat_zn_indus = concat_zn_indus(spark, df_customers)
+    df_limit_to_50_1 = limit_to_50_1(spark)
+    df_AndreLimitGit_1 = AndreLimitGit_1(spark, df_limit_to_50_1)
     df_SampleRows_1 = SampleRows_1(spark)
     df_limit_to_50 = limit_to_50(spark)
     df_AndreLimitDoc_1 = AndreLimitDoc_1(spark, df_limit_to_50)
