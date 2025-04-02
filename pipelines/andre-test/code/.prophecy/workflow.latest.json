@@ -103,8 +103,57 @@
     "sourcePort" : "Z4PuSkyn973KrerJh6Ef2$$NbChJjuNhj6UldJeVngCf",
     "target" : "z7gucPFnD_I8J9Or-AfAT$$tjNBwNX0VQbUIAtpF2HRe",
     "targetPort" : "tf7B5eCLw9jTxGllohWiO$$KDNB6IYGEFvYuV6IMPeZG"
+  }, {
+    "id" : "uB6v0g-50pqI7-9z5lKWz$$pDRfD1rPBBKD1MEqrXxjI",
+    "source" : "siNjVSMWLCg6IA-_63p7t$$6H4EqjiBKPPjZ6dSmKzWT",
+    "sourcePort" : "3_A3cSK1OtkWh8yA2-d_E$$RylIWn8biRLi59WuFu1yj",
+    "target" : "ZF9Vv2vk7MzGUphW9_mu_$$QNpupbOmEP-kSt0LTHlRW",
+    "targetPort" : "T6pH8i8Sm6qtOXMFN3-V8$$5EZDu1wBp_TYI0b4hftmN"
   } ],
   "processes" : {
+    "XB9nv2q5gfnIkorDg26ML$$JxQnS_ttznfZSFCOUocNx" : {
+      "id" : "XB9nv2q5gfnIkorDg26ML$$JxQnS_ttznfZSFCOUocNx",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "Aggregate_1",
+        "slug" : "Aggregate_1",
+        "x" : -1320,
+        "y" : -1340,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "_ZBiBDBeKb7w5JpC6T3WK$$tvRvecBDTHVytl9AsBfwC",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "rAQASeVyCNrsUDpzyQF2g$$HSt2-d_wMoGhtUWfsvGGZ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "allIns" : false,
+        "doPivot" : false,
+        "aggregate" : [ ],
+        "allowSelection" : true,
+        "pivotColumn" : null,
+        "pivotValues" : [ ],
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.40&projectSubscriptionProjectId=12654&path=gems/Aggregate",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
     "6E_iKmVuDMoye7Ruezpl7$$keTMKU_B9HDaZx97g3w6M" : {
       "id" : "6E_iKmVuDMoye7Ruezpl7$$keTMKU_B9HDaZx97g3w6M",
       "component" : "SchemaTransform",
@@ -316,13 +365,85 @@
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
+    "siNjVSMWLCg6IA-_63p7t$$6H4EqjiBKPPjZ6dSmKzWT" : {
+      "id" : "siNjVSMWLCg6IA-_63p7t$$6H4EqjiBKPPjZ6dSmKzWT",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "limit_to_50_1_1",
+        "slug" : "limit_to_50_1_1",
+        "x" : -2060,
+        "y" : -1080,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Restricts the dataset to the first 50 records for streamlined analysis.",
+        "autoUpdateComment" : true,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "bzUIVXFcmeXyjMpyds8GS$$b-nH98b9KvcPpFvxfEDqw",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "3_A3cSK1OtkWh8yA2-d_E$$RylIWn8biRLi59WuFu1yj",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "limit" : "50"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.40&projectSubscriptionProjectId=12654&path=gems/Limit",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "ZF9Vv2vk7MzGUphW9_mu_$$QNpupbOmEP-kSt0LTHlRW" : {
+      "id" : "ZF9Vv2vk7MzGUphW9_mu_$$QNpupbOmEP-kSt0LTHlRW",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit_1",
+        "slug" : "Limit_1",
+        "x" : -1840,
+        "y" : -1080,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "T6pH8i8Sm6qtOXMFN3-V8$$5EZDu1wBp_TYI0b4hftmN",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Dn6flEtQCAD4CdNbFbq4a$$jCGWEVoSLY-nlUF3BgyvS",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "limit" : "10"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.40&projectSubscriptionProjectId=12654&path=gems/Limit",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
     "z7gucPFnD_I8J9Or-AfAT$$tjNBwNX0VQbUIAtpF2HRe" : {
       "id" : "z7gucPFnD_I8J9Or-AfAT$$tjNBwNX0VQbUIAtpF2HRe",
       "component" : "AndreLimitGit",
       "metadata" : {
         "label" : "AndreLimitGit_1",
         "slug" : "AndreLimitGit_1",
-        "x" : -1720,
+        "x" : -1840,
         "y" : -1220,
         "phase" : 0,
         "cache" : false,
@@ -420,7 +541,7 @@
       "metadata" : {
         "label" : "AndreLimitDoc_1",
         "slug" : "AndreLimitDoc_1",
-        "x" : -1720,
+        "x" : -1840,
         "y" : -1380,
         "phase" : 0,
         "cache" : false,
@@ -451,7 +572,7 @@
       "metadata" : {
         "label" : "limit_to_50",
         "slug" : "limit_to_50",
-        "x" : -1940,
+        "x" : -2060,
         "y" : -1380,
         "phase" : 0,
         "cache" : false,
@@ -488,7 +609,7 @@
       "metadata" : {
         "label" : "limit_to_50_1",
         "slug" : "limit_to_50_1",
-        "x" : -1940,
+        "x" : -2060,
         "y" : -1220,
         "phase" : 0,
         "cache" : false,
@@ -528,6 +649,70 @@
     "autoUpdateOnRun" : false
   },
   "diagnostics" : [ {
+    "property" : "$.workflow.processes.XB9nv2q5gfnIkorDg26ML$$JxQnS_ttznfZSFCOUocNx.ports.inputs[0]",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Please connect input port in0",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.XB9nv2q5gfnIkorDg26ML$$JxQnS_ttznfZSFCOUocNx.properties.aggregate",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "At least one aggregate expression is required in Aggregate.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.siNjVSMWLCg6IA-_63p7t$$6H4EqjiBKPPjZ6dSmKzWT.ports.inputs[0]",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Please connect input port in0",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.ZF9Vv2vk7MzGUphW9_mu_$$QNpupbOmEP-kSt0LTHlRW",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
     "property" : "$.workflow.processes.bQZXbZRCmJ5zcYl-DIju4$$nsJraY7bNZeMZbyGEBkq7.ports.inputs[0]",
     "range" : {
       "start" : {

@@ -7,8 +7,11 @@ from prophecy.utils import *
 from andretest.graph import *
 
 def pipeline(spark: SparkSession) -> None:
+    df_Aggregate_1 = Aggregate_1(spark)
     df_customers = customers(spark)
     df_concat_zn_indus = concat_zn_indus(spark, df_customers)
+    df_limit_to_50_1_1 = limit_to_50_1_1(spark)
+    df_Limit_1 = Limit_1(spark, df_limit_to_50_1_1)
     df_limit_to_50_1 = limit_to_50_1(spark)
     df_AndreLimitGit_1 = AndreLimitGit_1(spark, df_limit_to_50_1)
     df_SampleRows_1 = SampleRows_1(spark)
