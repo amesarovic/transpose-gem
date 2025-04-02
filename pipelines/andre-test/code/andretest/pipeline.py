@@ -8,6 +8,10 @@ from andretest.graph import *
 
 def pipeline(spark: SparkSession) -> None:
     df_customers = customers(spark)
+    df_concat_zn_indus = concat_zn_indus(spark, df_customers)
+    df_SampleRows_1 = SampleRows_1(spark)
+    df_limit_to_50 = limit_to_50(spark)
+    df_AndreLimitDoc_1 = AndreLimitDoc_1(spark, df_limit_to_50)
 
 def main():
     spark = SparkSession.builder.enableHiveSupport().appName("andre-test").getOrCreate()

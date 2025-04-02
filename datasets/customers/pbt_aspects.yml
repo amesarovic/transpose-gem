@@ -1,4 +1,123 @@
 version: 1
 schema:
   type: struct
-  fields: []
+  fields:
+  - name: _c0
+    type: string
+    nullable: true
+    metadata:
+      description: Unique identifier for each customer record.
+      mappings: []
+      tags: []
+  - name: crim
+    type: string
+    nullable: true
+    metadata:
+      description: Per capita crime rate by town; Indicates the level of crime in
+        the area.
+      mappings: []
+      tags: []
+  - name: zn
+    type: string
+    nullable: true
+    metadata:
+      description: Proportion of residential land zoned for lots over 25,000 sq. ft.;
+        Indicates the level of zoning in the area.
+      mappings: []
+      tags: []
+  - name: indus
+    type: string
+    nullable: true
+    metadata:
+      description: Proportion of non-retail business acres per town; Indicates the
+        level of industrial activity in the area.
+      mappings: []
+      tags: []
+  - name: chas
+    type: string
+    nullable: true
+    metadata:
+      description: Indicates whether the property is located near the Charles River;
+        A value of '1' means it is, while '0' means it is not.
+      mappings: []
+      tags: []
+  - name: nox
+    type: string
+    nullable: true
+    metadata:
+      description: Nitric oxides concentration in parts per 10 million; Indicates
+        air pollution levels in the area.
+      mappings: []
+      tags: []
+  - name: rm
+    type: string
+    nullable: true
+    metadata:
+      description: Average number of rooms per dwelling; Indicates the typical size
+        of homes in the area.
+      mappings: []
+      tags: []
+  - name: age
+    type: string
+    nullable: true
+    metadata:
+      description: Proportion of owner-occupied units built prior to 1940; Represents
+        the percentage of homes in the area that were constructed before 1940.
+      mappings: []
+      tags: []
+  - name: dis
+    type: string
+    nullable: true
+    metadata:
+      description: Weighted distances to five Boston employment centers; Represents
+        the accessibility of employment opportunities for residents.
+      mappings: []
+      tags: []
+  - name: rad
+    type: string
+    nullable: true
+    metadata:
+      description: Index of accessibility to radial highways; A higher value indicates
+        better access to major highways.
+      mappings: []
+      tags: []
+  - name: tax
+    type: string
+    nullable: true
+    metadata:
+      description: Property tax rate per $10,000; Indicates the tax burden on properties
+        in the area.
+      mappings: []
+      tags: []
+  - name: ptratio
+    type: string
+    nullable: true
+    metadata:
+      description: Pupil-teacher ratio in the area; Indicates the number of students
+        per teacher, reflecting educational quality.
+      mappings: []
+      tags: []
+  - name: black
+    type: string
+    nullable: true
+    metadata:
+      description: Proportion of Black residents in the neighborhood; Represents the
+        percentage of the population that identifies as Black.
+      mappings: []
+      tags: []
+  - name: lstat
+    type: string
+    nullable: true
+    metadata:
+      description: Percentage of the population considered lower status; Indicates
+        socioeconomic status within the community.
+      mappings: []
+      tags: []
+  - name: medv
+    type: string
+    nullable: true
+    metadata:
+      description: Median value of owner-occupied homes in thousands of dollars; Represents
+        the market value of residential properties.
+      mappings: []
+      tags: []

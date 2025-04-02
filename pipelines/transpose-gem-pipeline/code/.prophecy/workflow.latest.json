@@ -15,6 +15,80 @@
     },
     "id" : "1",
     "uri" : "pipelines/transpose-gem-pipeline",
+    "sourceSuggestions" : [ {
+      "sourceLabel" : "products_50",
+      "sourceDatasetId" : "datasets/products_50",
+      "canJoinWith" : [ {
+        "processLabel" : "customers",
+        "processId" : "ZMDUYI7-tENdHRgQDrlqg$$z8dKGdWskpD3ioq_1FBvP",
+        "joinColumns" : [ "medv" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "medv" ],
+          "conditions" : [ {
+            "alias" : "products_50",
+            "expression" : "(customers.medv = products_50.medium)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "products",
+            "expression" : "products_50.products"
+          }, {
+            "alias" : "small",
+            "expression" : "products_50.small"
+          }, {
+            "alias" : "large",
+            "expression" : "products_50.large"
+          }, {
+            "alias" : "chas",
+            "expression" : "customers.chas"
+          }, {
+            "alias" : "tax",
+            "expression" : "customers.tax"
+          }, {
+            "alias" : "dis",
+            "expression" : "customers.dis"
+          }, {
+            "alias" : "ptratio",
+            "expression" : "customers.ptratio"
+          }, {
+            "alias" : "_c0",
+            "expression" : "customers._c0"
+          }, {
+            "alias" : "age",
+            "expression" : "customers.age"
+          }, {
+            "alias" : "indus",
+            "expression" : "customers.indus"
+          }, {
+            "alias" : "black",
+            "expression" : "customers.black"
+          }, {
+            "alias" : "rad",
+            "expression" : "customers.rad"
+          }, {
+            "alias" : "medv",
+            "expression" : "customers.medv"
+          }, {
+            "alias" : "zn",
+            "expression" : "customers.zn"
+          }, {
+            "alias" : "nox",
+            "expression" : "customers.nox"
+          }, {
+            "alias" : "lstat",
+            "expression" : "customers.lstat"
+          }, {
+            "alias" : "crim",
+            "expression" : "customers.crim"
+          }, {
+            "alias" : "rm",
+            "expression" : "customers.rm"
+          } ],
+          "headAlias" : "datasets/products_50"
+        }
+      } ]
+    } ],
     "pipelineSettingsInfo" : {
       "applicationName" : "transpose-gem-pipeline",
       "hasApplication" : true,
@@ -123,22 +197,5 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.processes.ZMDUYI7-tENdHRgQDrlqg$$z8dKGdWskpD3ioq_1FBvP.properties.dataset.schema",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "Missing Schema. Please infer schema or provide it manually.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  } ]
+  }
 }

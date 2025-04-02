@@ -85,21 +85,282 @@
     "configTopLevelPackage" : "andretest",
     "configurationVersion" : "v2"
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "WwqSCkHdJFEzLiaoDvhU0",
+    "source" : "j_p5l6F-RGBXBr8s4kWHN$$TJwcHuhCfVaOWfaosNCav",
+    "sourcePort" : "IjMLYyyVVvfcUXnyYalty$$_m5IBeU0BcfRe1mibKHv-",
+    "target" : "Ee6jPhrI-lW8-AF-JgkzW$$y4gBWrrqRKKgH5VR7SMwG",
+    "targetPort" : "bXT4aiEPnxH_dCoZn_LZN$$2t7zoE5d_N4eJ0z2vBy_v"
+  }, {
+    "id" : "6MoSreJKYyJFVi2nG2t3t",
+    "source" : "Jsgei8vFcle4rzRjomOgw$$niJ9qwXMWJ-CqwJ4_Yo6d",
+    "sourcePort" : "k5KSFGfKR5nBOFS2FxcCg$$0rFm35jU5NPdTW85NIFjo",
+    "target" : "6E_iKmVuDMoye7Ruezpl7$$keTMKU_B9HDaZx97g3w6M",
+    "targetPort" : "BXHozm-9Rh42evBglQjqk$$AdlQSeEQs59OUb9J4NaRB"
+  } ],
   "processes" : {
+    "6E_iKmVuDMoye7Ruezpl7$$keTMKU_B9HDaZx97g3w6M" : {
+      "id" : "6E_iKmVuDMoye7Ruezpl7$$keTMKU_B9HDaZx97g3w6M",
+      "component" : "SchemaTransform",
+      "metadata" : {
+        "label" : "concat_zn_indus",
+        "slug" : "concat_zn_indus",
+        "x" : -1520,
+        "y" : -900,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Combines two fields, 'zn' and 'indus', into a single identifier for better data analysis.",
+        "autoUpdateComment" : true,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "BXHozm-9Rh42evBglQjqk$$AdlQSeEQs59OUb9J4NaRB",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "_c0",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for each customer record.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "crim",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Per capita crime rate by town; Indicates the level of crime in the area.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "zn",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Proportion of residential land zoned for lots over 25,000 sq. ft.; Indicates the level of zoning in the area.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "indus",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Proportion of non-retail business acres per town; Indicates the level of industrial activity in the area.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "chas",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Indicates whether the property is located near the Charles River; A value of '1' means it is, while '0' means it is not.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "nox",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Nitric oxides concentration in parts per 10 million; Indicates air pollution levels in the area.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rm",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Average number of rooms per dwelling; Indicates the typical size of homes in the area.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "age",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Proportion of owner-occupied units built prior to 1940; Represents the percentage of homes in the area that were constructed before 1940.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "dis",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Weighted distances to five Boston employment centers; Represents the accessibility of employment opportunities for residents.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rad",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Index of accessibility to radial highways; A higher value indicates better access to major highways.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tax",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Property tax rate per $10,000; Indicates the tax burden on properties in the area.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ptratio",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Pupil-teacher ratio in the area; Indicates the number of students per teacher, reflecting educational quality.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "black",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Proportion of Black residents in the neighborhood; Represents the percentage of the population that identifies as Black.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lstat",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Percentage of the population considered lower status; Indicates socioeconomic status within the community.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "medv",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Median value of owner-occupied homes in thousands of dollars; Represents the market value of residential properties.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "l-lEEOAtDDA0_OltXRT4l$$l3hTU5pUNjeOpCTVAPLW0",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "sql",
+        "importString" : "",
+        "transformations" : [ {
+          "AddRule" : {
+            "expression" : {
+              "expression" : "",
+              "format" : "python"
+            },
+            "param_errors" : [ ]
+          },
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "kind" : "AddReplaceColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "zn_indus",
+            "expression" : {
+              "format" : "sql",
+              "expression" : "concat(zn,indus)"
+            }
+          }
+        } ],
+        "activeTab" : "transformations",
+        "columnsSelector" : [ "BXHozm-9Rh42evBglQjqk$$AdlQSeEQs59OUb9J4NaRB##indus", "BXHozm-9Rh42evBglQjqk$$AdlQSeEQs59OUb9J4NaRB##zn" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.40&projectSubscriptionProjectId=12654&path=gems/SchemaTransform",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "oJazphPsS8PH8FeZyCbQx$$Dmzg5rcefO4i2v3jVFj06" : {
+      "id" : "oJazphPsS8PH8FeZyCbQx$$Dmzg5rcefO4i2v3jVFj06",
+      "component" : "SampleRows",
+      "metadata" : {
+        "label" : "SampleRows_1",
+        "slug" : "SampleRows_1",
+        "x" : -1200,
+        "y" : -900,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "0p4HqwhDNwhfcUFjDrYaa$$oswx9Y8fVEn9Gv0QqQYY9",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "0p4HqwhDNwhfcUFjDrYaa$$oswx9Y8fVEn9Gv0QqQYY9",
+          "slug" : "in0"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : true
+      },
+      "properties" : {
+        "sampling_ratio" : "0.5",
+        "with_replacement" : false,
+        "seed" : null,
+        "sampling_strategy" : "percR"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.40&projectSubscriptionProjectId=12654&path=gems/SampleRows",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
     "Jsgei8vFcle4rzRjomOgw$$niJ9qwXMWJ-CqwJ4_Yo6d" : {
       "id" : "Jsgei8vFcle4rzRjomOgw$$niJ9qwXMWJ-CqwJ4_Yo6d",
       "component" : "Source",
       "metadata" : {
         "label" : "customers",
         "slug" : "customers",
-        "x" : -880,
-        "y" : -440,
+        "x" : -1800,
+        "y" : -900,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Loads customer data from a CSV file for further analysis.",
+        "comment" : "Loads customer-related data from a CSV file, providing insights into various socio-economic factors.",
         "autoUpdateComment" : true
       },
       "ports" : {
@@ -115,6 +376,74 @@
       "properties" : {
         "datasetId" : "datasets/customers"
       }
+    },
+    "Ee6jPhrI-lW8-AF-JgkzW$$y4gBWrrqRKKgH5VR7SMwG" : {
+      "id" : "Ee6jPhrI-lW8-AF-JgkzW$$y4gBWrrqRKKgH5VR7SMwG",
+      "component" : "AndreLimitDoc",
+      "metadata" : {
+        "label" : "AndreLimitDoc_1",
+        "slug" : "AndreLimitDoc_1",
+        "x" : -1220,
+        "y" : -600,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "bXT4aiEPnxH_dCoZn_LZN$$2t7zoE5d_N4eJ0z2vBy_v",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "zZJJpjXNVZslYGrtpXJb-$$E9Wf8WUuJVW3Pd4gBOQgb",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "my_property" : "default value of my property"
+      }
+    },
+    "j_p5l6F-RGBXBr8s4kWHN$$TJwcHuhCfVaOWfaosNCav" : {
+      "id" : "j_p5l6F-RGBXBr8s4kWHN$$TJwcHuhCfVaOWfaosNCav",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "limit_to_50",
+        "slug" : "limit_to_50",
+        "x" : -1440,
+        "y" : -600,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Restricts the dataset to the first 50 records for streamlined analysis.",
+        "autoUpdateComment" : true,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GQB63GMi06_TfA3joXimq$$QTkpmPWaBVHG23y84JBSd",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "IjMLYyyVVvfcUXnyYalty$$_m5IBeU0BcfRe1mibKHv-",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "limit" : "50"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.40&projectSubscriptionProjectId=12654&path=gems/Limit",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
     }
   },
   "ports" : {
@@ -125,7 +454,39 @@
     "autoUpdateOnRun" : false
   },
   "diagnostics" : [ {
-    "property" : "$.workflow.processes.Jsgei8vFcle4rzRjomOgw$$niJ9qwXMWJ-CqwJ4_Yo6d.properties.dataset.schema",
+    "property" : "$.workflow.processes.oJazphPsS8PH8FeZyCbQx$$Dmzg5rcefO4i2v3jVFj06.ports.inputs[0]",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Please connect input port in0",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.j_p5l6F-RGBXBr8s4kWHN$$TJwcHuhCfVaOWfaosNCav.ports.inputs[0]",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Please connect input port in0",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Ee6jPhrI-lW8-AF-JgkzW$$y4gBWrrqRKKgH5VR7SMwG",
     "range" : {
       "start" : {
         "line" : 0,
@@ -137,7 +498,7 @@
       }
     },
     "severity" : 2,
-    "message" : "Missing Schema. Please infer schema or provide it manually.",
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
     "tags" : [ ],
     "relatedInformation" : [ ]
   } ]

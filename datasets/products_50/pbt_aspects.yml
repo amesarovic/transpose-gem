@@ -1,0 +1,32 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: products
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: small
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: medium
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: large
+    type: string
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
