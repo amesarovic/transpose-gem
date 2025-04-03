@@ -87,127 +87,27 @@
     "configurationVersion" : "v2"
   },
   "connections" : [ {
-    "id" : "F2tLvtBvP7gEyaqGwXllx",
-    "source" : "pYMCnmWjdA090DDPfU6DY$$6kPraH27ZxUaJuq7u3AfB",
-    "sourcePort" : "nFJZ5JcnP7sJk5ao6ng32$$bOZgaDHvlss0L1F9Q-zWx",
-    "target" : "fvnakp0Wh7I8TmoX0Utfz$$3iWWOJvQWlNyYywkKPOaP",
-    "targetPort" : "vQfr5qJ_n0QQVoLORgzyL$$95uNSb7TJOy0ptB8-pf0O"
-  }, {
-    "id" : "VBKu-xuMwbbGAXHTCNnXk",
+    "id" : "Whxb2rhyLG6y9xkrkpPUz$$-lHFNOJUA-L0K9g7ZL_9n",
     "source" : "6dFWTEq_QLcivV6GVyzLe$$qlTEaM3cNEop4hwYAUfdy",
     "sourcePort" : "T8Tddrcw-eIUxQoQ58-B-$$IqPGjGFLRlxPvKkm0hr8X",
-    "target" : "KPjdeSTaWAUrugueBV4aB$$JB-l7Go_PKNu6wz08Beco",
-    "targetPort" : "3Y64lclVggTVJtzEb4cG1$$oIFKquggxPE6ttMYK-GAt"
+    "target" : "kc1521HWFqJwiyoaEypXZ$$DyLOxApGIwQzWh4r69tt9",
+    "targetPort" : "4E7HY0IEfQ4irIuhni_yg$$Sh5nbJDeScUts4HkM2WzH"
+  }, {
+    "id" : "0oECqo9INj16C1VDDY0nj$$bZXa4F3HQ4dJrNAV2maIS",
+    "source" : "s8rZZ6na9FHRWqRMJ0guO$$NR9y5YCEtzO6ge-hdYSA5",
+    "sourcePort" : "BtdefkceIq35TDyKlVDeH$$3bidQskHqKmJ7UML04iQl",
+    "target" : "WUvGoHYd5SK50_74Pu3Og$$BQ7NQ9gdbpdyQI325PPjf",
+    "targetPort" : "XnktsPtj6gdKShTvPs95E$$D0BPJ6_ZIIO91WysQ1cZk"
   } ],
   "processes" : {
-    "pYMCnmWjdA090DDPfU6DY$$6kPraH27ZxUaJuq7u3AfB" : {
-      "id" : "pYMCnmWjdA090DDPfU6DY$$6kPraH27ZxUaJuq7u3AfB",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "products_50",
-        "slug" : "products_50",
-        "x" : -2240,
-        "y" : -2140,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "nFJZ5JcnP7sJk5ao6ng32$$bOZgaDHvlss0L1F9Q-zWx",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/products_50"
-      }
-    },
-    "fvnakp0Wh7I8TmoX0Utfz$$3iWWOJvQWlNyYywkKPOaP" : {
-      "id" : "fvnakp0Wh7I8TmoX0Utfz$$3iWWOJvQWlNyYywkKPOaP",
-      "component" : "AndreTranspose",
-      "metadata" : {
-        "label" : "AndreTranspose_1",
-        "slug" : "AndreTranspose_1",
-        "x" : -1940,
-        "y" : -2140,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false,
-        "dataPreview" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "vQfr5qJ_n0QQVoLORgzyL$$95uNSb7TJOy0ptB8-pf0O",
-          "slug" : "in0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "products",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "small",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "medium",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "large",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
-        } ],
-        "outputs" : [ {
-          "id" : "DciKamVM3Ian8LOlCChpT$$nZA2w4BcJHd1eRDmJWHj1",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "my_property" : "default value of my property",
-        "pivot_column" : "pivot column"
-      }
-    },
     "6dFWTEq_QLcivV6GVyzLe$$qlTEaM3cNEop4hwYAUfdy" : {
       "id" : "6dFWTEq_QLcivV6GVyzLe$$qlTEaM3cNEop4hwYAUfdy",
       "component" : "Source",
       "metadata" : {
         "label" : "products_50_1",
         "slug" : "products_50_1",
-        "x" : -2240,
-        "y" : -2320,
+        "x" : -2560,
+        "y" : -2500,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -227,24 +127,23 @@
         "datasetId" : "datasets/products_50"
       }
     },
-    "KPjdeSTaWAUrugueBV4aB$$JB-l7Go_PKNu6wz08Beco" : {
-      "id" : "KPjdeSTaWAUrugueBV4aB$$JB-l7Go_PKNu6wz08Beco",
-      "component" : "AndreTranspose2",
+    "kc1521HWFqJwiyoaEypXZ$$DyLOxApGIwQzWh4r69tt9" : {
+      "id" : "kc1521HWFqJwiyoaEypXZ$$DyLOxApGIwQzWh4r69tt9",
+      "component" : "AmmTranspose",
       "metadata" : {
-        "label" : "AndreTranspose2_1",
-        "slug" : "AndreTranspose2_1",
-        "x" : -1940,
-        "y" : -2320,
+        "label" : "AmmTranspose_1",
+        "slug" : "AmmTranspose_1",
+        "x" : -2360,
+        "y" : -2500,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "autoUpdateComment" : true,
         "dataPreview" : false
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "3Y64lclVggTVJtzEb4cG1$$oIFKquggxPE6ttMYK-GAt",
+          "id" : "4E7HY0IEfQ4irIuhni_yg$$Sh5nbJDeScUts4HkM2WzH",
           "slug" : "in0",
           "schema" : {
             "type" : "struct",
@@ -289,7 +188,7 @@
           "isStreaming" : false
         } ],
         "outputs" : [ {
-          "id" : "ZIwaHG3EIB1fMXcVFRJWx$$nm8Z_CVt_L0SylOjv43f8",
+          "id" : "zSauR7pX_9qG-UXTdmak2$$SL1n3sXKFpnTCED3D3mlV",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -298,11 +197,116 @@
       },
       "properties" : {
         "pivot_column" : "pivot column",
-        "key_columns" : [ "products" ],
-        "value_columns" : [ "small", "medium", "large" ]
+        "key_columns" : [ ],
+        "value_columns" : [ ]
       },
       "componentInfo" : {
-        "gemId" : "gems/AndreTranspose2",
+        "gemId" : "gems/AmmTranspose",
+        "projectName" : "gem-development-transpose"
+      }
+    },
+    "s8rZZ6na9FHRWqRMJ0guO$$NR9y5YCEtzO6ge-hdYSA5" : {
+      "id" : "s8rZZ6na9FHRWqRMJ0guO$$NR9y5YCEtzO6ge-hdYSA5",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "products_50_1_1",
+        "slug" : "products_50_1_1",
+        "x" : -2560,
+        "y" : -2340,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "BtdefkceIq35TDyKlVDeH$$3bidQskHqKmJ7UML04iQl",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/products_50"
+      }
+    },
+    "WUvGoHYd5SK50_74Pu3Og$$BQ7NQ9gdbpdyQI325PPjf" : {
+      "id" : "WUvGoHYd5SK50_74Pu3Og$$BQ7NQ9gdbpdyQI325PPjf",
+      "component" : "AmmTranspose2",
+      "metadata" : {
+        "label" : "AmmTranspose2_1",
+        "slug" : "AmmTranspose2_1",
+        "x" : -2360,
+        "y" : -2340,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "XnktsPtj6gdKShTvPs95E$$D0BPJ6_ZIIO91WysQ1cZk",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "products",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "small",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "medium",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "large",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "HvGCYq0GWUbQ9pMM3KdCK$$P_jsE4b3S6c7cZA02dty_",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "pivot_column" : "pivot column",
+        "key_columns" : [ ],
+        "value_columns" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gems/AmmTranspose2",
         "projectName" : "gem-development-transpose"
       }
     }
@@ -315,7 +319,7 @@
     "autoUpdateOnRun" : false
   },
   "diagnostics" : [ {
-    "property" : "$.workflow.processes.fvnakp0Wh7I8TmoX0Utfz$$3iWWOJvQWlNyYywkKPOaP",
+    "property" : "$.workflow.processes.kc1521HWFqJwiyoaEypXZ$$DyLOxApGIwQzWh4r69tt9",
     "range" : {
       "start" : {
         "line" : 0,
@@ -327,23 +331,7 @@
       }
     },
     "severity" : 1,
-    "message" : "Could not find the spec for AndreTranspose",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.KPjdeSTaWAUrugueBV4aB$$JB-l7Go_PKNu6wz08Beco",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Could not find the spec for AndreTranspose2",
+    "message" : "Could not find the spec for AmmTranspose",
     "tags" : [ ],
     "relatedInformation" : [ ]
   } ]

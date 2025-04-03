@@ -8,8 +8,8 @@ from prophecy.cb.server.base.datatypes import SInt, SString
 from prophecy.cb.ui.uispec import *
 
 
-class AmmTranspose2(ComponentSpec):
-    name: str = "AmmTranspose2"
+class AmmTranspose(ComponentSpec):
+    name: str = "AmmTranspose"
     category: str = "Transform"
 
     def optimizeCode(self) -> bool:
@@ -17,7 +17,7 @@ class AmmTranspose2(ComponentSpec):
         return True
 
     @dataclass(frozen=True)
-    class AmmTranspose2Properties(ComponentProperties):
+    class AmmTransposeProperties(ComponentProperties):
         pivot_column: SString = SString("pivot column")
         key_columns: list[str] = field(default_factory=list)
         value_columns: list[str] = field(default_factory=list)
@@ -49,11 +49,11 @@ class AmmTranspose2(ComponentSpec):
             )
         )
 
-    def validate(self, context: WorkflowContext, component: Component[AmmTranspose2Properties]) -> List[Diagnostic]:
+    def validate(self, context: WorkflowContext, component: Component[AmmTransposeProperties]) -> List[Diagnostic]:
         # Validate the component's state
         return []
 
-    def _todo_validate(self, context: WorkflowContext, component: Component[AmmTranspose2Properties]) -> List[Diagnostic]:
+    def _todo_validate(self, context: WorkflowContext, component: Component[AmmTransposeProperties]) -> List[Diagnostic]:
         diagnostics = []
         pivotColMsgDiag = "Pivot column"
         if component.properties.limit.diagnosticMessages is not None and len(component.properties.limit.diagnosticMessages) > 0:
@@ -67,8 +67,8 @@ class AmmTranspose2(ComponentSpec):
                 pass
         return diagnostics
 
-    def onChange(self, context: WorkflowContext, oldState: Component[AmmTranspose2Properties], newState: Component[AmmTranspose2Properties]) -> Component[
-    AmmTranspose2Properties]:
+    def onChange(self, context: WorkflowContext, oldState: Component[AmmTransposeProperties], newState: Component[AmmTransposeProperties]) -> Component[
+    AmmTransposeProperties]:
         # Handle changes in the component's state and return the new state
         return newState
 
@@ -77,14 +77,14 @@ class AmmTranspose2(ComponentSpec):
     def foo(df):
         return df.limit(10)
 
-    class AmmTranspose2Code(ComponentCode):
+    class AmmTransposeCode(ComponentCode):
         def __init__(self, newProps):
-            self.props: AmmTranspose2.AmmTranspose2Properties = newProps
+            self.props: AmmTranspose.AmmTransposeProperties = newProps
 
         def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
             def bar(df):
-                return df.limit(10)
-                #return spark.createDataFrame([("a", 1), ("b", 2), ("c",  3)], ["Col1", "Col2"])
+                #return df.limit(10)
+                return spark.createDataFrame([("a", 1), ("b", 2), ("c",  3)], ["Col1", "Col2"])
 
             key_columns = self.props.key_columns 
             print(">> key_columns.1:", self.props.key_columns)
