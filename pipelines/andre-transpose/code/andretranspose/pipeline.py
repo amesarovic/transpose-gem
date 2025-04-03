@@ -8,6 +8,7 @@ from andretranspose.graph import *
 
 def pipeline(spark: SparkSession) -> None:
     df_products_50 = products_50(spark)
+    df_products_50_1 = products_50_1(spark)
 
 def main():
     spark = SparkSession.builder.enableHiveSupport().appName("andre-transpose").getOrCreate()

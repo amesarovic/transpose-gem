@@ -94,10 +94,34 @@ gemContainer:
       author: mesarovic.andre@prophecy.io
       mode: batch
       files:
-      - mesarovicandreprophecyioteam_gemdevelopmenttranspose/gems/AndreTest.py
+      - mesarovicandreprophecyioteam_gemdevelopmenttranspose/gems/AndreTest_01.py
       gemType: ComponentGem
       dependencies: null
       createdAt: '2025-04-03 00:17:55'
+    gems/Andre_Test_02:
+      name: Andre_Test_02
+      category: Custom
+      subCategory: ''
+      description: null
+      author: mesarovic.andre@prophecy.io
+      mode: batch
+      files:
+      - mesarovicandreprophecyioteam_gemdevelopmenttranspose/gems/AndreTest_02.py
+      gemType: ComponentGem
+      dependencies: null
+      createdAt: '2025-04-03 00:39:25'
+    gems/AndreTranspose2:
+      name: AndreTranspose2
+      category: Transform
+      subCategory: ''
+      description: null
+      author: mesarovic.andre@prophecy.io
+      mode: batch
+      files:
+      - mesarovicandreprophecyioteam_gemdevelopmenttranspose/gems/AndreTranspose2.py
+      gemType: ComponentGem
+      dependencies: []
+      createdAt: '2025-04-03 00:56:40'
   dependencies: null
 functions:
   author: null

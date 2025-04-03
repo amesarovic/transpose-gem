@@ -15,6 +15,7 @@
     },
     "id" : "1",
     "uri" : "pipelines/andre-transpose",
+    "sourceSuggestions" : [ ],
     "pipelineSettingsInfo" : {
       "applicationName" : "andre-transpose",
       "hasApplication" : true,
@@ -91,6 +92,12 @@
     "sourcePort" : "nFJZ5JcnP7sJk5ao6ng32$$bOZgaDHvlss0L1F9Q-zWx",
     "target" : "fvnakp0Wh7I8TmoX0Utfz$$3iWWOJvQWlNyYywkKPOaP",
     "targetPort" : "vQfr5qJ_n0QQVoLORgzyL$$95uNSb7TJOy0ptB8-pf0O"
+  }, {
+    "id" : "VBKu-xuMwbbGAXHTCNnXk",
+    "source" : "6dFWTEq_QLcivV6GVyzLe$$qlTEaM3cNEop4hwYAUfdy",
+    "sourcePort" : "T8Tddrcw-eIUxQoQ58-B-$$IqPGjGFLRlxPvKkm0hr8X",
+    "target" : "KPjdeSTaWAUrugueBV4aB$$JB-l7Go_PKNu6wz08Beco",
+    "targetPort" : "3Y64lclVggTVJtzEb4cG1$$oIFKquggxPE6ttMYK-GAt"
   } ],
   "processes" : {
     "pYMCnmWjdA090DDPfU6DY$$6kPraH27ZxUaJuq7u3AfB" : {
@@ -99,8 +106,8 @@
       "metadata" : {
         "label" : "products_50",
         "slug" : "products_50",
-        "x" : -1260,
-        "y" : -1660,
+        "x" : -2240,
+        "y" : -2280,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -126,8 +133,8 @@
       "metadata" : {
         "label" : "AndreTranspose_1",
         "slug" : "AndreTranspose_1",
-        "x" : -960,
-        "y" : -1660,
+        "x" : -1940,
+        "y" : -2280,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -192,6 +199,111 @@
         "my_property" : "default value of my property",
         "pivot_column" : "pivot column"
       }
+    },
+    "6dFWTEq_QLcivV6GVyzLe$$qlTEaM3cNEop4hwYAUfdy" : {
+      "id" : "6dFWTEq_QLcivV6GVyzLe$$qlTEaM3cNEop4hwYAUfdy",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "products_50_1",
+        "slug" : "products_50_1",
+        "x" : -2240,
+        "y" : -2120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "T8Tddrcw-eIUxQoQ58-B-$$IqPGjGFLRlxPvKkm0hr8X",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/products_50"
+      }
+    },
+    "KPjdeSTaWAUrugueBV4aB$$JB-l7Go_PKNu6wz08Beco" : {
+      "id" : "KPjdeSTaWAUrugueBV4aB$$JB-l7Go_PKNu6wz08Beco",
+      "component" : "AndreTranspose2",
+      "metadata" : {
+        "label" : "AndreTranspose2_1",
+        "slug" : "AndreTranspose2_1",
+        "x" : -1940,
+        "y" : -2120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "3Y64lclVggTVJtzEb4cG1$$oIFKquggxPE6ttMYK-GAt",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "products",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "small",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "medium",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "large",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "ZIwaHG3EIB1fMXcVFRJWx$$nm8Z_CVt_L0SylOjv43f8",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "pivot_column" : "pivot column",
+        "key_columns" : [ ],
+        "value_columns" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gems/AndreTranspose2",
+        "projectName" : "gem-development-transpose"
+      }
     }
   },
   "ports" : {
@@ -203,6 +315,22 @@
   },
   "diagnostics" : [ {
     "property" : "$.workflow.processes.fvnakp0Wh7I8TmoX0Utfz$$3iWWOJvQWlNyYywkKPOaP",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Error occurred while doing Schema Analysis: name 'transpose_df' is not defined",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.KPjdeSTaWAUrugueBV4aB$$JB-l7Go_PKNu6wz08Beco",
     "range" : {
       "start" : {
         "line" : 0,

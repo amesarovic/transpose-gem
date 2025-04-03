@@ -109,6 +109,18 @@
     "sourcePort" : "3_A3cSK1OtkWh8yA2-d_E$$RylIWn8biRLi59WuFu1yj",
     "target" : "ZF9Vv2vk7MzGUphW9_mu_$$QNpupbOmEP-kSt0LTHlRW",
     "targetPort" : "T6pH8i8Sm6qtOXMFN3-V8$$5EZDu1wBp_TYI0b4hftmN"
+  }, {
+    "id" : "bjafCNMI5qmiOIaIOhojR$$AXw1EXV15IvHZzdxVyUaQ",
+    "source" : "oJazphPsS8PH8FeZyCbQx$$Dmzg5rcefO4i2v3jVFj06",
+    "sourcePort" : "0p4HqwhDNwhfcUFjDrYaa$$oswx9Y8fVEn9Gv0QqQYY9",
+    "target" : "XB9nv2q5gfnIkorDg26ML$$JxQnS_ttznfZSFCOUocNx",
+    "targetPort" : "_ZBiBDBeKb7w5JpC6T3WK$$tvRvecBDTHVytl9AsBfwC"
+  }, {
+    "id" : "VxlBtSBBpyr5LhE-RP7W5",
+    "source" : "Tom5M6D-CPCF5NV-kexne$$j6v5JsQRg1XeVFS_NcRSY",
+    "sourcePort" : "Vqpf6E1gJ_hllfng-c5mr$$bT_Vy4XfVzTw7NRnoiU76",
+    "target" : "gM2u88sSO_T9zTf7Lcj1a$$mfPeLQIaUQctHnMdXEDTQ",
+    "targetPort" : "71gAf-LZBq0A0Kb2Tk7Q-$$tgxa0Ro04jUv6nbiAvlSP"
   } ],
   "processes" : {
     "XB9nv2q5gfnIkorDg26ML$$JxQnS_ttznfZSFCOUocNx" : {
@@ -117,8 +129,8 @@
       "metadata" : {
         "label" : "Aggregate_1",
         "slug" : "Aggregate_1",
-        "x" : -1320,
-        "y" : -1340,
+        "x" : -1200,
+        "y" : -880,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -468,6 +480,43 @@
         "limit" : "10"
       }
     },
+    "Tom5M6D-CPCF5NV-kexne$$j6v5JsQRg1XeVFS_NcRSY" : {
+      "id" : "Tom5M6D-CPCF5NV-kexne$$j6v5JsQRg1XeVFS_NcRSY",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "limit_to_50_2",
+        "slug" : "limit_to_50_2",
+        "x" : -1620,
+        "y" : -1380,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Restricts the dataset to the first 50 records for streamlined analysis.",
+        "autoUpdateComment" : true,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "NPasRUdzPxHoZEk90PVPZ$$traCdHzDcI0C8rKdixmbZ",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Vqpf6E1gJ_hllfng-c5mr$$bT_Vy4XfVzTw7NRnoiU76",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "limit" : "50"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.40&projectSubscriptionProjectId=12654&path=gems/Limit",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
     "oJazphPsS8PH8FeZyCbQx$$Dmzg5rcefO4i2v3jVFj06" : {
       "id" : "oJazphPsS8PH8FeZyCbQx$$Dmzg5rcefO4i2v3jVFj06",
       "component" : "SampleRows",
@@ -639,6 +688,41 @@
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.40&projectSubscriptionProjectId=12654&path=gems/Limit",
         "projectName" : "ProphecySparkBasicsPython"
       }
+    },
+    "gM2u88sSO_T9zTf7Lcj1a$$mfPeLQIaUQctHnMdXEDTQ" : {
+      "id" : "gM2u88sSO_T9zTf7Lcj1a$$mfPeLQIaUQctHnMdXEDTQ",
+      "component" : "Andre_Test_02",
+      "metadata" : {
+        "label" : "Andre_Test_02_1",
+        "slug" : "Andre_Test_02_1",
+        "x" : -1440,
+        "y" : -1380,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "71gAf-LZBq0A0Kb2Tk7Q-$$tgxa0Ro04jUv6nbiAvlSP",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "yVDux_PHSzHrNqZ7Xw1g1$$WYGQTnfAHHKQgkeCtDEiO",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "my_property" : "default value of my property"
+      },
+      "componentInfo" : {
+        "gemId" : "gems/Andre_Test_02",
+        "projectName" : "gem-development-transpose"
+      }
     }
   },
   "ports" : {
@@ -649,7 +733,7 @@
     "autoUpdateOnRun" : false
   },
   "diagnostics" : [ {
-    "property" : "$.workflow.processes.XB9nv2q5gfnIkorDg26ML$$JxQnS_ttznfZSFCOUocNx.ports.inputs[0]",
+    "property" : "$.workflow.processes.oJazphPsS8PH8FeZyCbQx$$Dmzg5rcefO4i2v3jVFj06.ports.inputs[0]",
     "range" : {
       "start" : {
         "line" : 0,
@@ -665,6 +749,22 @@
     "tags" : [ ],
     "relatedInformation" : [ ]
   }, {
+    "property" : "$.workflow.processes.XB9nv2q5gfnIkorDg26ML$$JxQnS_ttznfZSFCOUocNx",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
     "property" : "$.workflow.processes.XB9nv2q5gfnIkorDg26ML$$JxQnS_ttznfZSFCOUocNx.properties.aggregate",
     "range" : {
       "start" : {
@@ -676,7 +776,7 @@
         "character" : 0
       }
     },
-    "severity" : 1,
+    "severity" : 2,
     "message" : "At least one aggregate expression is required in Aggregate.",
     "tags" : [ ],
     "relatedInformation" : [ ]
@@ -745,7 +845,7 @@
     "tags" : [ ],
     "relatedInformation" : [ ]
   }, {
-    "property" : "$.workflow.processes.oJazphPsS8PH8FeZyCbQx$$Dmzg5rcefO4i2v3jVFj06.ports.inputs[0]",
+    "property" : "$.workflow.processes.Tom5M6D-CPCF5NV-kexne$$j6v5JsQRg1XeVFS_NcRSY.ports.inputs[0]",
     "range" : {
       "start" : {
         "line" : 0,
@@ -778,6 +878,22 @@
     "relatedInformation" : [ ]
   }, {
     "property" : "$.workflow.processes.Ee6jPhrI-lW8-AF-JgkzW$$y4gBWrrqRKKgH5VR7SMwG",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.gM2u88sSO_T9zTf7Lcj1a$$mfPeLQIaUQctHnMdXEDTQ",
     "range" : {
       "start" : {
         "line" : 0,
