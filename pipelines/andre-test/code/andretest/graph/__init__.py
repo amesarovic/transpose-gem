@@ -3,8 +3,6 @@ from .SampleRows_1 import SampleRows_1
 from .concat_zn_indus import concat_zn_indus
 from .limit_to_50 import limit_to_50
 from .Aggregate_1 import Aggregate_1
-from .AndreLimitGit_1 import AndreLimitGit_1
-from .AndreLimitDoc_1 import AndreLimitDoc_1
 from .Limit_1 import Limit_1
 from .limit_to_50_2 import limit_to_50_2
 from .limit_to_50_1_1 import limit_to_50_1_1

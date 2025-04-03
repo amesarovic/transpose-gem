@@ -239,6 +239,7 @@
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
+        "autoUpdateComment" : true,
         "dataPreview" : false
       },
       "ports" : {
@@ -297,8 +298,8 @@
       },
       "properties" : {
         "pivot_column" : "pivot column",
-        "key_columns" : [ ],
-        "value_columns" : [ ]
+        "key_columns" : [ "products" ],
+        "value_columns" : [ "small", "medium", "large" ]
       },
       "componentInfo" : {
         "gemId" : "gems/AndreTranspose2",
@@ -342,7 +343,7 @@
       }
     },
     "severity" : 1,
-    "message" : "Error occurred while doing Schema Analysis: name 'transpose_df' is not defined",
+    "message" : "Could not find the spec for AndreTranspose2",
     "tags" : [ ],
     "relatedInformation" : [ ]
   } ]

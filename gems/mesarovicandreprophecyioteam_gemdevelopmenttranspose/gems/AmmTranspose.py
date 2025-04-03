@@ -8,8 +8,8 @@ from prophecy.cb.server.base.datatypes import SInt, SString
 from prophecy.cb.ui.uispec import *
 
 
-class AndreTranspose(ComponentSpec):
-    name: str = "AndreTranspose2"
+class AmmTranspose(ComponentSpec):
+    name: str = "AmmTranspose2"
     category: str = "Transform"
 
     def optimizeCode(self) -> bool:
@@ -17,7 +17,7 @@ class AndreTranspose(ComponentSpec):
         return True
 
     @dataclass(frozen=True)
-    class AndreTransposeProperties(ComponentProperties):
+    class AmmTransposeProperties(ComponentProperties):
         pivot_column: SString = SString("pivot column")
         key_columns: list[str] = field(default_factory=list)
         value_columns: list[str] = field(default_factory=list)
@@ -49,11 +49,11 @@ class AndreTranspose(ComponentSpec):
             )
         )
 
-    def validate(self, context: WorkflowContext, component: Component[AndreTransposeProperties]) -> List[Diagnostic]:
+    def validate(self, context: WorkflowContext, component: Component[AmmTransposeProperties]) -> List[Diagnostic]:
         # Validate the component's state
         return []
 
-    def _todo_validate(self, context: WorkflowContext, component: Component[AndreTransposeProperties]) -> List[Diagnostic]:
+    def _todo_validate(self, context: WorkflowContext, component: Component[AmmTransposeProperties]) -> List[Diagnostic]:
         diagnostics = []
         pivotColMsgDiag = "Pivot column"
         if component.properties.limit.diagnosticMessages is not None and len(component.properties.limit.diagnosticMessages) > 0:
@@ -67,16 +67,16 @@ class AndreTranspose(ComponentSpec):
                 pass
         return diagnostics
 
-    def onChange(self, context: WorkflowContext, oldState: Component[AndreTransposeProperties], newState: Component[AndreTransposeProperties]) -> Component[
-    AndreTransposeProperties]:
+    def onChange(self, context: WorkflowContext, oldState: Component[AmmTransposeProperties], newState: Component[AmmTransposeProperties]) -> Component[
+    AmmTransposeProperties]:
         # Handle changes in the component's state and return the new state
         return newState
 
     import pyspark.sql.functions as F
     
-    class AndreTransposeCode(ComponentCode):
+    class AmmTransposeCode(ComponentCode):
         def __init__(self, newProps):
-            self.props: AndreTranspose.AndreTransposeProperties = newProps
+            self.props: AmmTranspose.AmmTransposeProperties = newProps
 
         def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
             return self.transpose_df(in0, key_values, value_columns)
@@ -107,3 +107,4 @@ class AndreTranspose(ComponentSpec):
                 transposed_df = transposed_df.union(other_df)
 
             return transposed_df
+

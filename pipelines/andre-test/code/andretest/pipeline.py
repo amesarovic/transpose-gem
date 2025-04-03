@@ -14,10 +14,8 @@ def pipeline(spark: SparkSession) -> None:
     df_limit_to_50_1_1 = limit_to_50_1_1(spark)
     df_Limit_1 = Limit_1(spark, df_limit_to_50_1_1)
     df_limit_to_50_1 = limit_to_50_1(spark)
-    df_AndreLimitGit_1 = AndreLimitGit_1(spark, df_limit_to_50_1)
     df_limit_to_50_2 = limit_to_50_2(spark)
     df_limit_to_50 = limit_to_50(spark)
-    df_AndreLimitDoc_1 = AndreLimitDoc_1(spark, df_limit_to_50)
     df_Andre_Test_02_1 = Andre_Test_02_1(spark, df_limit_to_50_2)
 
 def main():
