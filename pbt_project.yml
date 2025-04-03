@@ -154,7 +154,6 @@ gemContainer:
       author: mesarovic.andre@prophecy.io
       mode: batch
       files:
-      - mesarovicandreprophecyioteam_gemdevelopmenttranspose/gems/AmmTranspose.py
       - mesarovicandreprophecyioteam_gemdevelopmenttranspose/gems/AmmTranspose2.py
       gemType: ComponentGem
       dependencies: []

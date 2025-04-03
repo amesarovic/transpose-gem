@@ -87,132 +87,21 @@
     "configurationVersion" : "v2"
   },
   "connections" : [ {
-    "id" : "Whxb2rhyLG6y9xkrkpPUz$$-lHFNOJUA-L0K9g7ZL_9n",
-    "source" : "6dFWTEq_QLcivV6GVyzLe$$qlTEaM3cNEop4hwYAUfdy",
-    "sourcePort" : "T8Tddrcw-eIUxQoQ58-B-$$IqPGjGFLRlxPvKkm0hr8X",
-    "target" : "kc1521HWFqJwiyoaEypXZ$$DyLOxApGIwQzWh4r69tt9",
-    "targetPort" : "4E7HY0IEfQ4irIuhni_yg$$Sh5nbJDeScUts4HkM2WzH"
-  }, {
-    "id" : "0oECqo9INj16C1VDDY0nj$$bZXa4F3HQ4dJrNAV2maIS",
+    "id" : "7CeIaYkY8UK1Fke5UUZ2F",
     "source" : "s8rZZ6na9FHRWqRMJ0guO$$NR9y5YCEtzO6ge-hdYSA5",
     "sourcePort" : "BtdefkceIq35TDyKlVDeH$$3bidQskHqKmJ7UML04iQl",
-    "target" : "WUvGoHYd5SK50_74Pu3Og$$BQ7NQ9gdbpdyQI325PPjf",
-    "targetPort" : "XnktsPtj6gdKShTvPs95E$$D0BPJ6_ZIIO91WysQ1cZk"
+    "target" : "4YHNqWkCvV_LbMpRCjYbD$$iSNe6hqMGlTzZx6Irf-GY",
+    "targetPort" : "PiAlWFSHEnDWqW0ICyqb4$$FPUAUy05T7naoamhqZupA"
   } ],
   "processes" : {
-    "6dFWTEq_QLcivV6GVyzLe$$qlTEaM3cNEop4hwYAUfdy" : {
-      "id" : "6dFWTEq_QLcivV6GVyzLe$$qlTEaM3cNEop4hwYAUfdy",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "products_50_1",
-        "slug" : "products_50_1",
-        "x" : -2560,
-        "y" : -2500,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "T8Tddrcw-eIUxQoQ58-B-$$IqPGjGFLRlxPvKkm0hr8X",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/products_50"
-      }
-    },
-    "kc1521HWFqJwiyoaEypXZ$$DyLOxApGIwQzWh4r69tt9" : {
-      "id" : "kc1521HWFqJwiyoaEypXZ$$DyLOxApGIwQzWh4r69tt9",
-      "component" : "AmmTranspose",
-      "metadata" : {
-        "label" : "AmmTranspose_1",
-        "slug" : "AmmTranspose_1",
-        "x" : -2360,
-        "y" : -2500,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false,
-        "dataPreview" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "4E7HY0IEfQ4irIuhni_yg$$Sh5nbJDeScUts4HkM2WzH",
-          "slug" : "in0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "products",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "small",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "medium",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "large",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
-        } ],
-        "outputs" : [ {
-          "id" : "zSauR7pX_9qG-UXTdmak2$$SL1n3sXKFpnTCED3D3mlV",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "pivot_column" : "pivot column",
-        "key_columns" : [ ],
-        "value_columns" : [ ]
-      },
-      "componentInfo" : {
-        "gemId" : "gems/AmmTranspose",
-        "projectName" : "gem-development-transpose"
-      }
-    },
     "s8rZZ6na9FHRWqRMJ0guO$$NR9y5YCEtzO6ge-hdYSA5" : {
       "id" : "s8rZZ6na9FHRWqRMJ0guO$$NR9y5YCEtzO6ge-hdYSA5",
       "component" : "Source",
       "metadata" : {
         "label" : "products_50_1_1",
         "slug" : "products_50_1_1",
-        "x" : -2560,
-        "y" : -2340,
+        "x" : -3160,
+        "y" : -2640,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -232,14 +121,14 @@
         "datasetId" : "datasets/products_50"
       }
     },
-    "WUvGoHYd5SK50_74Pu3Og$$BQ7NQ9gdbpdyQI325PPjf" : {
-      "id" : "WUvGoHYd5SK50_74Pu3Og$$BQ7NQ9gdbpdyQI325PPjf",
+    "4YHNqWkCvV_LbMpRCjYbD$$iSNe6hqMGlTzZx6Irf-GY" : {
+      "id" : "4YHNqWkCvV_LbMpRCjYbD$$iSNe6hqMGlTzZx6Irf-GY",
       "component" : "AmmTranspose2",
       "metadata" : {
         "label" : "AmmTranspose2_1",
         "slug" : "AmmTranspose2_1",
-        "x" : -2360,
-        "y" : -2340,
+        "x" : -2880,
+        "y" : -2640,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -248,7 +137,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "XnktsPtj6gdKShTvPs95E$$D0BPJ6_ZIIO91WysQ1cZk",
+          "id" : "PiAlWFSHEnDWqW0ICyqb4$$FPUAUy05T7naoamhqZupA",
           "slug" : "in0",
           "schema" : {
             "type" : "struct",
@@ -293,7 +182,7 @@
           "isStreaming" : false
         } ],
         "outputs" : [ {
-          "id" : "HvGCYq0GWUbQ9pMM3KdCK$$P_jsE4b3S6c7cZA02dty_",
+          "id" : "rRqSZXzjMY7AZHqJBTxRl$$IM-CBmul_52ysxlFTSfRo",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -319,7 +208,7 @@
     "autoUpdateOnRun" : false
   },
   "diagnostics" : [ {
-    "property" : "$.workflow.processes.kc1521HWFqJwiyoaEypXZ$$DyLOxApGIwQzWh4r69tt9",
+    "property" : "$.workflow.processes.4YHNqWkCvV_LbMpRCjYbD$$iSNe6hqMGlTzZx6Irf-GY",
     "range" : {
       "start" : {
         "line" : 0,
@@ -331,7 +220,7 @@
       }
     },
     "severity" : 1,
-    "message" : "Could not find the spec for AmmTranspose",
+    "message" : "Error occurred while doing Schema Analysis: name 'F' is not defined",
     "tags" : [ ],
     "relatedInformation" : [ ]
   } ]

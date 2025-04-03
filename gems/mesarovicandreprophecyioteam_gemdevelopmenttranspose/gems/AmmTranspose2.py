@@ -75,39 +75,47 @@ class AmmTranspose2(ComponentSpec):
     import pyspark.sql.functions as F
     
     def foo(df):
-        return df.limit(10)
+        return df.limit(6)
 
     class AmmTranspose2Code(ComponentCode):
         def __init__(self, newProps):
             self.props: AmmTranspose2.AmmTranspose2Properties = newProps
 
-        def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
+        def OLD_apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
             def bar(df):
-                return df.limit(10)
-                #return spark.createDataFrame([("a", 1), ("b", 2), ("c",  3)], ["Col1", "Col2"])
+                return df.limit(5)
 
-            key_columns = self.props.key_columns 
             print(">> key_columns.1:", self.props.key_columns)
+            print(">> value_columns.1:", self.props.value_columns)
+
             key_columns = [ "products" ]
             value_columns = [ "small", "medium", "large" ]
             print(">> key_columns.2:", key_columns)
-            #return in0
-            #return in0.limit(10)
+            print(">> value_columns.2:", value_columns)
             return bar(in0)
             #return self.transpose_df2(in0, key_columns, value_columns)
 
-        def transpose_df2(self,
-                df: DataFrame,
-                key_columns: list[str],
-                data_columns: list[str],
-                name_col: str = "name",
-                value_col: str = "value"
-            ) -> DataFrame:
+        def _apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
+            return in0
+            
+        def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
+            #print(">> Hello Transpose")
+            print(">> key_columns.0:", self.props.key_columns)
+            print(">> value_columns.0:", self.props.value_columns)
+        
+            key_columns = [ "products" ]
+            value_columns = [ "small", "medium", "large" ]
+            print(">> key_columns.1:", key_columns)
+            print(">> value_columns.1:", value_columns)
 
+            name_col = "name",
+            value_col = "value"
+            df = in0
+ 
             print(">> Hello Transpose")
             # NOTE: optimizer doesn't yet support list comprehension
             available_data_columns = []
-            for col_name in data_columns:
+            for col_name in value_columns:
                 if col_name in df.columns:
                     available_data_columns.append(col_name)
 
@@ -121,7 +129,7 @@ class AmmTranspose2(ComponentSpec):
             transposed_df = dfs[0]
             for other_df in dfs[1:]:
                 transposed_df = transposed_df.union(other_df)
-
-            return df.limit(10)
-            #return transposed_df
-
+ 
+            print(">> END")
+            #print(">> transposed_df:", transposed_df.count())
+            return transposed_df
