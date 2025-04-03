@@ -904,8 +904,8 @@
         "character" : 0
       }
     },
-    "severity" : 2,
-    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "severity" : 1,
+    "message" : "Could not find the spec for Andre_Test_02",
     "tags" : [ ],
     "relatedInformation" : [ ]
   } ]

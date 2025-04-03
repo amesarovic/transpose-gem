@@ -15,80 +15,7 @@
     },
     "id" : "1",
     "uri" : "pipelines/test_01",
-    "sourceSuggestions" : [ {
-      "sourceLabel" : "customers",
-      "sourceDatasetId" : "datasets/customers",
-      "canJoinWith" : [ {
-        "processLabel" : "products_50_1_1_1",
-        "processId" : "f4oVUWaTVJ1V3YtkR7aJi$$BBga_HzN4A0cGbt0uU2YO",
-        "joinColumns" : [ "medium" ],
-        "isRecommended" : true,
-        "properties" : {
-          "columnsSelector" : [ "medium" ],
-          "conditions" : [ {
-            "alias" : "customers",
-            "expression" : "(products_50_1_1_1.medium = customers.medv)",
-            "joinType" : "inner"
-          } ],
-          "expressions" : [ {
-            "alias" : "_c0",
-            "expression" : "customers._c0"
-          }, {
-            "alias" : "crim",
-            "expression" : "customers.crim"
-          }, {
-            "alias" : "zn",
-            "expression" : "customers.zn"
-          }, {
-            "alias" : "indus",
-            "expression" : "customers.indus"
-          }, {
-            "alias" : "chas",
-            "expression" : "customers.chas"
-          }, {
-            "alias" : "nox",
-            "expression" : "customers.nox"
-          }, {
-            "alias" : "rm",
-            "expression" : "customers.rm"
-          }, {
-            "alias" : "age",
-            "expression" : "customers.age"
-          }, {
-            "alias" : "dis",
-            "expression" : "customers.dis"
-          }, {
-            "alias" : "rad",
-            "expression" : "customers.rad"
-          }, {
-            "alias" : "tax",
-            "expression" : "customers.tax"
-          }, {
-            "alias" : "ptratio",
-            "expression" : "customers.ptratio"
-          }, {
-            "alias" : "black",
-            "expression" : "customers.black"
-          }, {
-            "alias" : "lstat",
-            "expression" : "customers.lstat"
-          }, {
-            "alias" : "products",
-            "expression" : "products_50_1_1_1.products"
-          }, {
-            "alias" : "small",
-            "expression" : "products_50_1_1_1.small"
-          }, {
-            "alias" : "medium",
-            "expression" : "products_50_1_1_1.medium"
-          }, {
-            "alias" : "large",
-            "expression" : "products_50_1_1_1.large"
-          } ],
-          "headAlias" : "datasets/customers"
-        }
-      } ]
-    } ],
+    "sourceSuggestions" : [ ],
     "pipelineSettingsInfo" : {
       "applicationName" : "test_01",
       "hasApplication" : true,
@@ -166,17 +93,23 @@
     "target" : "gCOPpv1MQ84wvdtxLgs1x$$0Fu9WBo9TgmyXsxcU5CFy",
     "targetPort" : "_rNTx8rPIrI1WYvc9-J1f$$D0RK_Vm7fyIZTfNTwOKFM"
   }, {
-    "id" : "RPF1zZhMJBNK_Ua1Cx1To$$WgBGtOtBhHKYXz818pha4",
-    "source" : "6gbKOGiPww6ystnGQVS0O$$ZT1FtTLBL1US1n6qAeX20",
-    "sourcePort" : "Tam4dDqs4iaVdnAckFXuQ$$vsgZyFjg7JRlN1cMKRgB9",
-    "target" : "modqTVbOkraE8OL_F1LfU$$43S5dz6ADt9KNTxlKPivi",
-    "targetPort" : "txYBmniCs205cQ-xYbi8Y$$DhupbNIg4MThaH0tfL54J"
-  }, {
-    "id" : "8KwhI9cH6L1bV19VfN2L8",
+    "id" : "ZbH6Sm4o9ak74Xvx8SxnJ$$I6l_bXn4inY8q81Q3DZpW",
     "source" : "rfXUWhKyJEcNkKWHNE9lm$$KloN-RwSYAAaVCPfMn7Ge",
     "sourcePort" : "o8eZ5znh1lzdpQcJWYyDV$$7O7s6hKmXTTyXV6CZyEGR",
-    "target" : "mJFzAwrJ4XsIweVF0uN2y$$bfLDeUSwpjeOmPRTPFb2R",
-    "targetPort" : "_mN0vVOztOtv2lwVLoUOd$$3w8cj09sJRNiuL0IBA6j4"
+    "target" : "fP2rPQCbYHdXFB3J88aJC$$5Nn4fgB8wkiFnL0mTOYJs",
+    "targetPort" : "19QhKNeGEjtplw0eQlQoT$$43OVEJI-8FqGhWp_dubGk"
+  }, {
+    "id" : "GqbZjQ5TMoaWD_Y8Mh-Yv$$OA6yaCPWKOUbukv4UBeE9",
+    "source" : "f4oVUWaTVJ1V3YtkR7aJi$$BBga_HzN4A0cGbt0uU2YO",
+    "sourcePort" : "8FYSoimnXXZRi9C2yJofn$$LKw_LfQfU0ZZPzNnsTNSg",
+    "target" : "nHYUh4wuj9uOUcRUPJCdi$$j2xhk2xBCF0BNcM6QFhv-",
+    "targetPort" : "DCfm9eTgw5eXQjhzXiiQM$$7ZwLLyT6gmqjUL2cxCN9F"
+  }, {
+    "id" : "jQvtGmzdnspwH6CtayBa7$$urWj06QhaMkYvbeLggB0r",
+    "source" : "oUuThAgGMgti0aymZKii3$$Gqy4r8jnfk0DeSgeXcTpy",
+    "sourcePort" : "BqZZ-aPf7dcdqaB5JiNUx$$oNNZCxtAq12YiP9rjcRvZ",
+    "target" : "BYN_d7u4SzA7QJ5k-khuU$$3z3TRvL4jueuMG06TVAB2",
+    "targetPort" : "_sScYx8_7IXjdvqBoBztE$$VxispJh4cTOzcJ4XZVTjA"
   } ],
   "processes" : {
     "cRfbXk_Ouq_UpTN2RuW1w$$EJK8_fBRqh50Oou2o8VQt" : {
@@ -185,8 +118,8 @@
       "metadata" : {
         "label" : "products_50_1",
         "slug" : "products_50_1",
-        "x" : -1540,
-        "y" : -880,
+        "x" : -2080,
+        "y" : -1140,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -208,14 +141,90 @@
         "datasetId" : "datasets/products_50"
       }
     },
+    "fP2rPQCbYHdXFB3J88aJC$$5Nn4fgB8wkiFnL0mTOYJs" : {
+      "id" : "fP2rPQCbYHdXFB3J88aJC$$5Nn4fgB8wkiFnL0mTOYJs",
+      "component" : "AmmGitLimit",
+      "metadata" : {
+        "label" : "AmmGitLimit_1",
+        "slug" : "AmmGitLimit_1",
+        "x" : -1880,
+        "y" : -960,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "19QhKNeGEjtplw0eQlQoT$$43OVEJI-8FqGhWp_dubGk",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "products",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "small",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "medium",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "large",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "RoIj9Lwf0uCXurIJ_57E-$$xdcAjappDg1CAQwVLqMcQ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "limit" : "10"
+      },
+      "componentInfo" : {
+        "gemId" : "gems/AmmGitLimit",
+        "projectName" : "gem-development-transpose"
+      }
+    },
     "gCOPpv1MQ84wvdtxLgs1x$$0Fu9WBo9TgmyXsxcU5CFy" : {
       "id" : "gCOPpv1MQ84wvdtxLgs1x$$0Fu9WBo9TgmyXsxcU5CFy",
       "component" : "Limit",
       "metadata" : {
         "label" : "limit_to_20",
         "slug" : "limit_to_20",
-        "x" : -1340,
-        "y" : -880,
+        "x" : -1880,
+        "y" : -1140,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -286,43 +295,14 @@
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
-    "6gbKOGiPww6ystnGQVS0O$$ZT1FtTLBL1US1n6qAeX20" : {
-      "id" : "6gbKOGiPww6ystnGQVS0O$$ZT1FtTLBL1US1n6qAeX20",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "products_50_1_1",
-        "slug" : "products_50_1_1",
-        "x" : -1540,
-        "y" : -600,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false,
-        "comment" : "Loads product data from a CSV file for analysis.",
-        "autoUpdateComment" : true
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "Tam4dDqs4iaVdnAckFXuQ$$vsgZyFjg7JRlN1cMKRgB9",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/products_50"
-      }
-    },
     "f4oVUWaTVJ1V3YtkR7aJi$$BBga_HzN4A0cGbt0uU2YO" : {
       "id" : "f4oVUWaTVJ1V3YtkR7aJi$$BBga_HzN4A0cGbt0uU2YO",
       "component" : "Source",
       "metadata" : {
         "label" : "products_50_1_1_1",
         "slug" : "products_50_1_1_1",
-        "x" : -1540,
-        "y" : -740,
+        "x" : -2080,
+        "y" : -800,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -344,14 +324,14 @@
         "datasetId" : "datasets/products_50"
       }
     },
-    "mJFzAwrJ4XsIweVF0uN2y$$bfLDeUSwpjeOmPRTPFb2R" : {
-      "id" : "mJFzAwrJ4XsIweVF0uN2y$$bfLDeUSwpjeOmPRTPFb2R",
-      "component" : "AndreTest",
+    "BYN_d7u4SzA7QJ5k-khuU$$3z3TRvL4jueuMG06TVAB2" : {
+      "id" : "BYN_d7u4SzA7QJ5k-khuU$$3z3TRvL4jueuMG06TVAB2",
+      "component" : "AmmTest_01",
       "metadata" : {
-        "label" : "AndreTest_1",
-        "slug" : "AndreTest_1",
-        "x" : -1340,
-        "y" : -1060,
+        "label" : "AmmTest_01_1",
+        "slug" : "AmmTest_01_1",
+        "x" : -1420,
+        "y" : -1140,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -360,7 +340,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "_mN0vVOztOtv2lwVLoUOd$$3w8cj09sJRNiuL0IBA6j4",
+          "id" : "_sScYx8_7IXjdvqBoBztE$$VxispJh4cTOzcJ4XZVTjA",
           "slug" : "in0",
           "schema" : {
             "type" : "struct",
@@ -405,7 +385,7 @@
           "isStreaming" : false
         } ],
         "outputs" : [ {
-          "id" : "Au6iZYaRB230qBbiwthVI$$sw-OFnpUwha9bBLfRyPqJ",
+          "id" : "DZB_rfuvqvqiT7xg1QAWg$$G2OjAbBuo7u8b2_5hrqBg",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -416,7 +396,7 @@
         "my_property" : "default value of my property"
       },
       "componentInfo" : {
-        "gemId" : "gems/AndreTest",
+        "gemId" : "gems/AmmTest_01",
         "projectName" : "gem-development-transpose"
       }
     },
@@ -426,8 +406,8 @@
       "metadata" : {
         "label" : "products_50",
         "slug" : "products_50",
-        "x" : -1540,
-        "y" : -1060,
+        "x" : -2080,
+        "y" : -960,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -449,14 +429,14 @@
         "datasetId" : "datasets/products_50"
       }
     },
-    "modqTVbOkraE8OL_F1LfU$$43S5dz6ADt9KNTxlKPivi" : {
-      "id" : "modqTVbOkraE8OL_F1LfU$$43S5dz6ADt9KNTxlKPivi",
-      "component" : "AndreLimit2",
+    "nHYUh4wuj9uOUcRUPJCdi$$j2xhk2xBCF0BNcM6QFhv-" : {
+      "id" : "nHYUh4wuj9uOUcRUPJCdi$$j2xhk2xBCF0BNcM6QFhv-",
+      "component" : "AmmLimitNoop",
       "metadata" : {
-        "label" : "AmmLimitNoop",
-        "slug" : "AmmLimitNoop",
-        "x" : -1340,
-        "y" : -600,
+        "label" : "AmmLimitNoop_1",
+        "slug" : "AmmLimitNoop_1",
+        "x" : -1880,
+        "y" : -800,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -465,7 +445,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "txYBmniCs205cQ-xYbi8Y$$DhupbNIg4MThaH0tfL54J",
+          "id" : "DCfm9eTgw5eXQjhzXiiQM$$7ZwLLyT6gmqjUL2cxCN9F",
           "slug" : "in0",
           "schema" : {
             "type" : "struct",
@@ -510,7 +490,7 @@
           "isStreaming" : false
         } ],
         "outputs" : [ {
-          "id" : "EFCjgFdMPNVelpb9YUARl$$WUEpdZz26Xx26_LZmwjwW",
+          "id" : "_I4vmeXIEKxe0LnmvBecI$$1lZ3a7hxwDFZdDwClAGHs",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -521,8 +501,37 @@
         "my_property" : "default value of my property"
       },
       "componentInfo" : {
-        "gemId" : "gems/AndreLimit2",
+        "gemId" : "gems/AmmLimitNoop",
         "projectName" : "gem-development-transpose"
+      }
+    },
+    "oUuThAgGMgti0aymZKii3$$Gqy4r8jnfk0DeSgeXcTpy" : {
+      "id" : "oUuThAgGMgti0aymZKii3$$Gqy4r8jnfk0DeSgeXcTpy",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "products_50_1_1_1_1",
+        "slug" : "products_50_1_1_1_1",
+        "x" : -1620,
+        "y" : -1140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Loads product data from a CSV file for analysis.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "BqZZ-aPf7dcdqaB5JiNUx$$oNNZCxtAq12YiP9rjcRvZ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/products_50"
       }
     }
   },

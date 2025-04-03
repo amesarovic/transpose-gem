@@ -7,8 +7,8 @@ from prophecy.cb.server.base.datatypes import SInt
 from prophecy.cb.ui.uispec import *
 from prophecy.cb.server.base import WorkflowContext
 
-class Limit(ComponentSpec):
-    name: str = "Limit"
+class AmmGitLimit(ComponentSpec):
+    name: str = "AmmGitLimit"
     category: str = "Transform"
     gemDescription: str = "Limits the number of rows in the output"
     docUrl: str = "https://docs.prophecy.io/low-code-spark/gems/transform/limit/"
@@ -17,7 +17,7 @@ class Limit(ComponentSpec):
         return True
 
     @dataclass(frozen=True)
-    class LimitProperties(ComponentProperties):
+    class AmmGitLimitProperties(ComponentProperties):
         limit: SInt = SInt("10")
 
     def dialog(self) -> Dialog:
@@ -33,7 +33,7 @@ class Limit(ComponentSpec):
             )
         )
 
-    def validate(self, context: WorkflowContext, component: Component[LimitProperties]) -> List[Diagnostic]:
+    def validate(self, context: WorkflowContext, component: Component[AmmGitLimitProperties]) -> List[Diagnostic]:
         diagnostics = []
         limitDiagMsg = "Limit has to be an integer between [0, (2**31)-1]"
         if component.properties.limit.diagnosticMessages is not None and len(component.properties.limit.diagnosticMessages) > 0:
@@ -47,14 +47,15 @@ class Limit(ComponentSpec):
                 pass
         return diagnostics
 
-    def onChange(self, context: WorkflowContext, oldState: Component[LimitProperties], newState: Component[LimitProperties]) -> Component[
-        LimitProperties]:
+    def onChange(self, context: WorkflowContext, oldState: Component[AmmGitLimitProperties], newState: Component[AmmGitLimitProperties]) -> Component[
+        AmmGitLimitProperties]:
         return newState
 
 
-    class LimitCode(ComponentCode):
+    class AmmGitLimitCode(ComponentCode):
         def __init__(self, newProps):
-            self.props: Limit.LimitProperties = newProps
+            self.props: AmmGitLimit.AmmGitLimitProperties = newProps
 
         def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
             return in0.limit(self.props.limit.value)
+

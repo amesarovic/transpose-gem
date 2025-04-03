@@ -16,7 +16,6 @@ def pipeline(spark: SparkSession) -> None:
     df_limit_to_50_1 = limit_to_50_1(spark)
     df_limit_to_50_2 = limit_to_50_2(spark)
     df_limit_to_50 = limit_to_50(spark)
-    df_Andre_Test_02_1 = Andre_Test_02_1(spark, df_limit_to_50_2)
 
 def main():
     spark = SparkSession.builder.enableHiveSupport().appName("andre-test").getOrCreate()

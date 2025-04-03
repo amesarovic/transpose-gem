@@ -6,6 +6,5 @@ from prophecy.libs import typed_lit
 from test_01.config.ConfigStore import *
 from test_01.functions import *
 
-def AmmLimitNoop(spark: SparkSession, in0: DataFrame) -> DataFrame:
-    # This method contains logic used to generate the spark code from the given inputs.
-    return in0
+def AmmGitLimit_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    return in0.limit(10)
