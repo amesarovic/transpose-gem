@@ -6,7 +6,7 @@ from pyspark.sql.functions import *
 from prophecy.cb.server.base import WorkflowContext
 from prophecy.cb.server.base.datatypes import SInt, SString
 from prophecy.cb.ui.uispec import *
-
+import pyspark.sql.functions as F
 
 class AmmTranspose2(ComponentSpec):
     name: str = "AmmTranspose2"
@@ -71,8 +71,6 @@ class AmmTranspose2(ComponentSpec):
     AmmTranspose2Properties]:
         # Handle changes in the component's state and return the new state
         return newState
-
-    import pyspark.sql.functions as F
     
     def foo(df):
         return df.limit(6)
@@ -80,25 +78,10 @@ class AmmTranspose2(ComponentSpec):
     class AmmTranspose2Code(ComponentCode):
         def __init__(self, newProps):
             self.props: AmmTranspose2.AmmTranspose2Properties = newProps
-
-        def OLD_apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
-            def bar(df):
-                return df.limit(5)
-
-            print(">> key_columns.1:", self.props.key_columns)
-            print(">> value_columns.1:", self.props.value_columns)
-
-            key_columns = [ "products" ]
-            value_columns = [ "small", "medium", "large" ]
-            print(">> key_columns.2:", key_columns)
-            print(">> value_columns.2:", value_columns)
-            return bar(in0)
-            #return self.transpose_df2(in0, key_columns, value_columns)
-
-        def _apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
-            return in0
             
         def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
+            import pyspark.sql.functions as F
+
             #print(">> Hello Transpose")
             print(">> key_columns.0:", self.props.key_columns)
             print(">> value_columns.0:", self.props.value_columns)
@@ -108,8 +91,8 @@ class AmmTranspose2(ComponentSpec):
             print(">> key_columns.1:", key_columns)
             print(">> value_columns.1:", value_columns)
 
-            name_col = "name",
-            value_col = "value"
+            name_column = "name",
+            name_column = "value"
             df = in0
  
             print(">> Hello Transpose")
@@ -123,7 +106,7 @@ class AmmTranspose2(ComponentSpec):
             for data_col_name in available_data_columns:
                 selected_df = df.select([F.col(key_col) for key_col in key_columns] +
                                 [F.lit(data_col_name).cast("string").alias(name_column),
-                                 F.col(data_col_name).cast("string").alias(value_column)])
+                                 F.col(data_col_name).cast("string").alias(name_column)])
                 dfs.append(selected_df)
 
             transposed_df = dfs[0]
