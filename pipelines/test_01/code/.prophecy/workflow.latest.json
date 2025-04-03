@@ -15,80 +15,7 @@
     },
     "id" : "1",
     "uri" : "pipelines/test_01",
-    "sourceSuggestions" : [ {
-      "sourceLabel" : "customers",
-      "sourceDatasetId" : "datasets/customers",
-      "canJoinWith" : [ {
-        "processLabel" : "products_50",
-        "processId" : "rfXUWhKyJEcNkKWHNE9lm$$KloN-RwSYAAaVCPfMn7Ge",
-        "joinColumns" : [ "medium" ],
-        "isRecommended" : true,
-        "properties" : {
-          "columnsSelector" : [ "medium" ],
-          "conditions" : [ {
-            "alias" : "customers",
-            "expression" : "(products_50.medium = customers.medv)",
-            "joinType" : "inner"
-          } ],
-          "expressions" : [ {
-            "alias" : "_c0",
-            "expression" : "customers._c0"
-          }, {
-            "alias" : "crim",
-            "expression" : "customers.crim"
-          }, {
-            "alias" : "zn",
-            "expression" : "customers.zn"
-          }, {
-            "alias" : "indus",
-            "expression" : "customers.indus"
-          }, {
-            "alias" : "chas",
-            "expression" : "customers.chas"
-          }, {
-            "alias" : "nox",
-            "expression" : "customers.nox"
-          }, {
-            "alias" : "rm",
-            "expression" : "customers.rm"
-          }, {
-            "alias" : "age",
-            "expression" : "customers.age"
-          }, {
-            "alias" : "dis",
-            "expression" : "customers.dis"
-          }, {
-            "alias" : "rad",
-            "expression" : "customers.rad"
-          }, {
-            "alias" : "tax",
-            "expression" : "customers.tax"
-          }, {
-            "alias" : "ptratio",
-            "expression" : "customers.ptratio"
-          }, {
-            "alias" : "black",
-            "expression" : "customers.black"
-          }, {
-            "alias" : "lstat",
-            "expression" : "customers.lstat"
-          }, {
-            "alias" : "products",
-            "expression" : "products_50.products"
-          }, {
-            "alias" : "small",
-            "expression" : "products_50.small"
-          }, {
-            "alias" : "medium",
-            "expression" : "products_50.medium"
-          }, {
-            "alias" : "large",
-            "expression" : "products_50.large"
-          } ],
-          "headAlias" : "datasets/customers"
-        }
-      } ]
-    } ],
+    "sourceSuggestions" : [ ],
     "pipelineSettingsInfo" : {
       "applicationName" : "test_01",
       "hasApplication" : true,
@@ -159,16 +86,246 @@
     "configTopLevelPackage" : "test_01",
     "configurationVersion" : "v2"
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "UmMFYF-Bh8LSFizAMnJYB$$jZqMvPjbV4qwsw5MI-ETH",
+    "source" : "cRfbXk_Ouq_UpTN2RuW1w$$EJK8_fBRqh50Oou2o8VQt",
+    "sourcePort" : "0z-FDf8SSulW72jy7a6B3$$meh4FkXfM4Eh9F3bjeJpm",
+    "target" : "gCOPpv1MQ84wvdtxLgs1x$$0Fu9WBo9TgmyXsxcU5CFy",
+    "targetPort" : "_rNTx8rPIrI1WYvc9-J1f$$D0RK_Vm7fyIZTfNTwOKFM"
+  }, {
+    "id" : "RPF1zZhMJBNK_Ua1Cx1To$$WgBGtOtBhHKYXz818pha4",
+    "source" : "6gbKOGiPww6ystnGQVS0O$$ZT1FtTLBL1US1n6qAeX20",
+    "sourcePort" : "Tam4dDqs4iaVdnAckFXuQ$$vsgZyFjg7JRlN1cMKRgB9",
+    "target" : "modqTVbOkraE8OL_F1LfU$$43S5dz6ADt9KNTxlKPivi",
+    "targetPort" : "txYBmniCs205cQ-xYbi8Y$$DhupbNIg4MThaH0tfL54J"
+  }, {
+    "id" : "8KwhI9cH6L1bV19VfN2L8",
+    "source" : "rfXUWhKyJEcNkKWHNE9lm$$KloN-RwSYAAaVCPfMn7Ge",
+    "sourcePort" : "o8eZ5znh1lzdpQcJWYyDV$$7O7s6hKmXTTyXV6CZyEGR",
+    "target" : "mJFzAwrJ4XsIweVF0uN2y$$bfLDeUSwpjeOmPRTPFb2R",
+    "targetPort" : "_mN0vVOztOtv2lwVLoUOd$$3w8cj09sJRNiuL0IBA6j4"
+  } ],
   "processes" : {
+    "cRfbXk_Ouq_UpTN2RuW1w$$EJK8_fBRqh50Oou2o8VQt" : {
+      "id" : "cRfbXk_Ouq_UpTN2RuW1w$$EJK8_fBRqh50Oou2o8VQt",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "products_50_1",
+        "slug" : "products_50_1",
+        "x" : -1540,
+        "y" : -880,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Loads product data from a CSV file for analysis.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "0z-FDf8SSulW72jy7a6B3$$meh4FkXfM4Eh9F3bjeJpm",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/products_50"
+      }
+    },
+    "gCOPpv1MQ84wvdtxLgs1x$$0Fu9WBo9TgmyXsxcU5CFy" : {
+      "id" : "gCOPpv1MQ84wvdtxLgs1x$$0Fu9WBo9TgmyXsxcU5CFy",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "limit_to_20",
+        "slug" : "limit_to_20",
+        "x" : -1340,
+        "y" : -880,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Restricts the dataset to the first 20 entries for focused analysis.",
+        "autoUpdateComment" : true,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "_rNTx8rPIrI1WYvc9-J1f$$D0RK_Vm7fyIZTfNTwOKFM",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "products",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "small",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "medium",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "large",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "YSVmnYNFIrqUL4N1cNNhs$$23xtP9BFnrNWaeNb2sMX0",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "limit" : "20"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.40&projectSubscriptionProjectId=12654&path=gems/Limit",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "6gbKOGiPww6ystnGQVS0O$$ZT1FtTLBL1US1n6qAeX20" : {
+      "id" : "6gbKOGiPww6ystnGQVS0O$$ZT1FtTLBL1US1n6qAeX20",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "products_50_1_1",
+        "slug" : "products_50_1_1",
+        "x" : -1540,
+        "y" : -720,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Loads product data from a CSV file for analysis.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Tam4dDqs4iaVdnAckFXuQ$$vsgZyFjg7JRlN1cMKRgB9",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/products_50"
+      }
+    },
+    "mJFzAwrJ4XsIweVF0uN2y$$bfLDeUSwpjeOmPRTPFb2R" : {
+      "id" : "mJFzAwrJ4XsIweVF0uN2y$$bfLDeUSwpjeOmPRTPFb2R",
+      "component" : "AndreTest",
+      "metadata" : {
+        "label" : "AndreTest_1",
+        "slug" : "AndreTest_1",
+        "x" : -1340,
+        "y" : -1060,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "_mN0vVOztOtv2lwVLoUOd$$3w8cj09sJRNiuL0IBA6j4",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "products",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "small",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "medium",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "large",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "Au6iZYaRB230qBbiwthVI$$sw-OFnpUwha9bBLfRyPqJ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "my_property" : "default value of my property"
+      },
+      "componentInfo" : {
+        "gemId" : "gems/AndreTest",
+        "projectName" : "gem-development-transpose"
+      }
+    },
     "rfXUWhKyJEcNkKWHNE9lm$$KloN-RwSYAAaVCPfMn7Ge" : {
       "id" : "rfXUWhKyJEcNkKWHNE9lm$$KloN-RwSYAAaVCPfMn7Ge",
       "component" : "Source",
       "metadata" : {
         "label" : "products_50",
         "slug" : "products_50",
-        "x" : -1160,
-        "y" : -720,
+        "x" : -1540,
+        "y" : -1060,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -190,13 +347,13 @@
         "datasetId" : "datasets/products_50"
       }
     },
-    "mJFzAwrJ4XsIweVF0uN2y$$bfLDeUSwpjeOmPRTPFb2R" : {
-      "id" : "mJFzAwrJ4XsIweVF0uN2y$$bfLDeUSwpjeOmPRTPFb2R",
-      "component" : "AndreTest",
+    "modqTVbOkraE8OL_F1LfU$$43S5dz6ADt9KNTxlKPivi" : {
+      "id" : "modqTVbOkraE8OL_F1LfU$$43S5dz6ADt9KNTxlKPivi",
+      "component" : "AndreLimit2",
       "metadata" : {
-        "label" : "AndreTest_1",
-        "slug" : "AndreTest_1",
-        "x" : -960,
+        "label" : "AndreLimit2_1",
+        "slug" : "AndreLimit2_1",
+        "x" : -1340,
         "y" : -720,
         "phase" : 0,
         "cache" : false,
@@ -206,11 +363,52 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "_mN0vVOztOtv2lwVLoUOd$$3w8cj09sJRNiuL0IBA6j4",
-          "slug" : "in0"
+          "id" : "txYBmniCs205cQ-xYbi8Y$$DhupbNIg4MThaH0tfL54J",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "products",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "small",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "medium",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "large",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
         } ],
         "outputs" : [ {
-          "id" : "Au6iZYaRB230qBbiwthVI$$sw-OFnpUwha9bBLfRyPqJ",
+          "id" : "EFCjgFdMPNVelpb9YUARl$$WUEpdZz26Xx26_LZmwjwW",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -221,7 +419,7 @@
         "my_property" : "default value of my property"
       },
       "componentInfo" : {
-        "gemId" : "gems/AndreTest",
+        "gemId" : "gems/AndreLimit2",
         "projectName" : "gem-development-transpose"
       }
     }
@@ -232,22 +430,5 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.processes.mJFzAwrJ4XsIweVF0uN2y$$bfLDeUSwpjeOmPRTPFb2R.ports.inputs[0]",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Please connect input port in0",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  } ]
+  }
 }
