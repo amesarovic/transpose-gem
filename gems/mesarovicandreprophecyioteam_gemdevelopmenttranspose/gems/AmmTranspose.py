@@ -1,4 +1,6 @@
 
+
+
 from prophecy.cb.server.base.ComponentBuilderBase import *
 from pyspark.sql import *
 from pyspark.sql.functions import *
@@ -8,8 +10,8 @@ from prophecy.cb.server.base.datatypes import SInt, SString
 from prophecy.cb.ui.uispec import *
 import pyspark.sql.functions as F
 
-class AmmTranspose2(ComponentSpec):
-    name: str = "AmmTranspose2"
+class AmmTranspose(ComponentSpec):
+    name: str = "AmmTranspose"
     category: str = "Transform"
 
     def optimizeCode(self) -> bool:
@@ -17,7 +19,7 @@ class AmmTranspose2(ComponentSpec):
         return True
 
     @dataclass(frozen=True)
-    class AmmTranspose2Properties(ComponentProperties):
+    class AmmTransposeProperties(ComponentProperties):
         pivot_column: SString = SString("pivot column")
         key_columns: list[str] = field(default_factory=list)
         value_columns: list[str] = field(default_factory=list)
@@ -49,7 +51,7 @@ class AmmTranspose2(ComponentSpec):
             )
         )
 
-    def validate(self, context: WorkflowContext, component: Component[AmmTranspose2Properties]) -> List[Diagnostic]:
+    def validate(self, context: WorkflowContext, component: Component[AmmTransposeProperties]) -> List[Diagnostic]:
         print(">> validate: key_columns.0:", component.properties.key_columns)
         print(">> validate: value_columns.0:", component.properties.value_columns)
         diagnostics = []
@@ -65,26 +67,21 @@ class AmmTranspose2(ComponentSpec):
                 Diagnostic(f"properties.value_columns", f"Key and value columns cannot overlap: {common}", SeverityLevelEnum.Error))
         return diagnostics
 
-    def onChange(self, context: WorkflowContext, oldState: Component[AmmTranspose2Properties], newState: Component[AmmTranspose2Properties]) -> Component[
-    AmmTranspose2Properties]:
+    def onChange(self, context: WorkflowContext, oldState: Component[AmmTransposeProperties], newState: Component[AmmTransposeProperties]) -> Component[
+    AmmTransposeProperties]:
         # Handle changes in the component's state and return the new state
         return newState
 
 
-    class AmmTranspose2Code(ComponentCode):
+    class AmmTransposeCode(ComponentCode):
         def __init__(self, newProps):
-            self.props: AmmTranspose2.AmmTranspose2Properties = newProps
+            self.props: AmmTranspose.AmmTransposeProperties = newProps
             
         def apply(self, spark: SparkSession, df: DataFrame) -> DataFrame:
             import pyspark.sql.functions as F
 
             print(">> apply: key_columns.0:", self.props.key_columns)
             print(">> apply: value_columns.0:", self.props.value_columns)
-        
-            #key_columns = [ "products" ]
-            #value_columns = [ "small", "medium", "large" ]
-            #print(">> apply: key_columns.1:", key_columns)
-            #print(">> apply: value_columns.1:", value_columns)
              
             # NOTE: optimizer doesn't yet support list comprehension
             available_data_columns = []

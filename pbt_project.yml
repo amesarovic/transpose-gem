@@ -160,18 +160,18 @@ gemContainer:
       gemType: ComponentGem
       dependencies: []
       createdAt: '2025-04-03 15:26:07'
-    gems/AmmTranspose2:
-      name: AmmTranspose2
+    gems/AmmTranspose:
+      name: AmmTranspose
       category: Transform
       subCategory: ''
       description: null
       author: mesarovic.andre@prophecy.io
       mode: batch
       files:
-      - mesarovicandreprophecyioteam_gemdevelopmenttranspose/gems/AmmTranspose2.py
+      - mesarovicandreprophecyioteam_gemdevelopmenttranspose/gems/AmmTranspose.py
       gemType: ComponentGem
       dependencies: []
-      createdAt: '2025-04-03 16:15:58'
+      createdAt: '2025-04-03 18:38:23'
   dependencies: null
 functions:
   author: null
