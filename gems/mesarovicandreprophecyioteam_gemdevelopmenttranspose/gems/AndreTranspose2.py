@@ -18,13 +18,12 @@ class AndreTranspose(ComponentSpec):
 
     @dataclass(frozen=True)
     class AndreTransposeProperties(ComponentProperties):
-        # properties for the component with default values
         pivot_column: SString = SString("pivot column")
         key_columns: list[str] = field(default_factory=list)
         value_columns: list[str] = field(default_factory=list)
 
     def dialog(self) -> Dialog:
-        return Dialog("ColumnParser").addElement(
+        return Dialog("Transpose").addElement(
             ColumnsLayout(gap="1rem", height="100%")
             .addColumn(Ports(), "content")
             .addColumn(
@@ -49,10 +48,6 @@ class AndreTranspose(ComponentSpec):
                     ))
             )
         )
-
-    
-
-
 
     def validate(self, context: WorkflowContext, component: Component[AndreTransposeProperties]) -> List[Diagnostic]:
         # Validate the component's state
@@ -84,10 +79,7 @@ class AndreTranspose(ComponentSpec):
             self.props: AndreTranspose.AndreTransposeProperties = newProps
 
         def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
-            # This method contains logic used to generate the spark code from the given inputs.
-            pivot_col = "products" # TODO: make configurable
-            columns = ["small", "medium"] # TODO: ibid
-            return self.transpose_df(in0, [pivot_col], columns)
+            return self.transpose_df(in0, key_values, value_columns)
 
         def transpose_df(self,
                 df: DataFrame,
@@ -97,6 +89,7 @@ class AndreTranspose(ComponentSpec):
                 value_col: str = "value"
             ) -> DataFrame:
 
+            # NOTE: optimizer doesn't yet support list comprehension
             available_data_columns = []
             for col_name in data_columns:
                 if col_name in df.columns:
