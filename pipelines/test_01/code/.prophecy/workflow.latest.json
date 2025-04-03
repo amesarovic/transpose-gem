@@ -15,7 +15,80 @@
     },
     "id" : "1",
     "uri" : "pipelines/test_01",
-    "sourceSuggestions" : [ ],
+    "sourceSuggestions" : [ {
+      "sourceLabel" : "customers",
+      "sourceDatasetId" : "datasets/customers",
+      "canJoinWith" : [ {
+        "processLabel" : "products_50_1_1_1",
+        "processId" : "f4oVUWaTVJ1V3YtkR7aJi$$BBga_HzN4A0cGbt0uU2YO",
+        "joinColumns" : [ "medium" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "medium" ],
+          "conditions" : [ {
+            "alias" : "customers",
+            "expression" : "(products_50_1_1_1.medium = customers.medv)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "_c0",
+            "expression" : "customers._c0"
+          }, {
+            "alias" : "crim",
+            "expression" : "customers.crim"
+          }, {
+            "alias" : "zn",
+            "expression" : "customers.zn"
+          }, {
+            "alias" : "indus",
+            "expression" : "customers.indus"
+          }, {
+            "alias" : "chas",
+            "expression" : "customers.chas"
+          }, {
+            "alias" : "nox",
+            "expression" : "customers.nox"
+          }, {
+            "alias" : "rm",
+            "expression" : "customers.rm"
+          }, {
+            "alias" : "age",
+            "expression" : "customers.age"
+          }, {
+            "alias" : "dis",
+            "expression" : "customers.dis"
+          }, {
+            "alias" : "rad",
+            "expression" : "customers.rad"
+          }, {
+            "alias" : "tax",
+            "expression" : "customers.tax"
+          }, {
+            "alias" : "ptratio",
+            "expression" : "customers.ptratio"
+          }, {
+            "alias" : "black",
+            "expression" : "customers.black"
+          }, {
+            "alias" : "lstat",
+            "expression" : "customers.lstat"
+          }, {
+            "alias" : "products",
+            "expression" : "products_50_1_1_1.products"
+          }, {
+            "alias" : "small",
+            "expression" : "products_50_1_1_1.small"
+          }, {
+            "alias" : "medium",
+            "expression" : "products_50_1_1_1.medium"
+          }, {
+            "alias" : "large",
+            "expression" : "products_50_1_1_1.large"
+          } ],
+          "headAlias" : "datasets/customers"
+        }
+      } ]
+    } ],
     "pipelineSettingsInfo" : {
       "applicationName" : "test_01",
       "hasApplication" : true,
@@ -147,7 +220,7 @@
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Restricts the dataset to the first 20 entries for focused analysis.",
+        "comment" : "Restricts the dataset to the first 10 entries for quick analysis.",
         "autoUpdateComment" : true,
         "dataPreview" : false
       },
@@ -206,7 +279,7 @@
         "autoUpdateOnRun" : false
       },
       "properties" : {
-        "limit" : "20"
+        "limit" : "10"
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.40&projectSubscriptionProjectId=12654&path=gems/Limit",
@@ -220,7 +293,7 @@
         "label" : "products_50_1_1",
         "slug" : "products_50_1_1",
         "x" : -1540,
-        "y" : -720,
+        "y" : -600,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -232,6 +305,35 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "Tam4dDqs4iaVdnAckFXuQ$$vsgZyFjg7JRlN1cMKRgB9",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/products_50"
+      }
+    },
+    "f4oVUWaTVJ1V3YtkR7aJi$$BBga_HzN4A0cGbt0uU2YO" : {
+      "id" : "f4oVUWaTVJ1V3YtkR7aJi$$BBga_HzN4A0cGbt0uU2YO",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "products_50_1_1_1",
+        "slug" : "products_50_1_1_1",
+        "x" : -1540,
+        "y" : -740,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Loads product data from a CSV file for analysis.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "8FYSoimnXXZRi9C2yJofn$$LKw_LfQfU0ZZPzNnsTNSg",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -351,10 +453,10 @@
       "id" : "modqTVbOkraE8OL_F1LfU$$43S5dz6ADt9KNTxlKPivi",
       "component" : "AndreLimit2",
       "metadata" : {
-        "label" : "AndreLimit2_1",
-        "slug" : "AndreLimit2_1",
+        "label" : "AmmLimitNoop",
+        "slug" : "AmmLimitNoop",
         "x" : -1340,
-        "y" : -720,
+        "y" : -600,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,

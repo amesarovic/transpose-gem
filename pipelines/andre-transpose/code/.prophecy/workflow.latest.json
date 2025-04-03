@@ -326,7 +326,7 @@
       }
     },
     "severity" : 1,
-    "message" : "Error occurred while doing Schema Analysis: name 'transpose_df' is not defined",
+    "message" : "Could not find the spec for AndreTranspose",
     "tags" : [ ],
     "relatedInformation" : [ ]
   }, {

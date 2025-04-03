@@ -144,10 +144,22 @@ gemContainer:
       author: mesarovic.andre@prophecy.io
       mode: batch
       files:
-      - mesarovicandreprophecyioteam_gemdevelopmenttranspose/gems/AndreLimit2.py
+      - mesarovicandreprophecyioteam_gemdevelopmenttranspose/gems/AmmLimitNoop.py
       gemType: ComponentGem
       dependencies: null
       createdAt: '2025-04-03 03:03:24'
+    gems/Limit:
+      name: Limit
+      category: Transform
+      subCategory: ''
+      description: null
+      author: mesarovic.andre@prophecy.io
+      mode: batch
+      files:
+      - mesarovicandreprophecyioteam_gemdevelopmenttranspose/gems/AmmLimitGit.py
+      gemType: ComponentGem
+      dependencies: []
+      createdAt: '2025-04-03 13:45:29'
   dependencies: null
 functions:
   author: null
