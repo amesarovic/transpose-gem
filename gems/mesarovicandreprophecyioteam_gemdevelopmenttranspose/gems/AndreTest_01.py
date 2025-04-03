@@ -20,9 +20,87 @@ class AndreTest(ComponentSpec):
         # properties for the component with default values
         my_property: SString = SString("default value of my property")
 
-    def dialog(self) -> Dialog:
+    def _dialog(self) -> Dialog:
         # Define the UI dialog structure for the component
         return Dialog("AndreTest")
+
+    def _dialog(self) -> Dialog:
+        return Dialog("Transpose").addElement(
+            ColumnsLayout(gap="1rem", height="100%")
+                .addColumn(Ports(), "content")
+                .addColumn(
+                StackLayout(height="100%").addElement(ColumnsLayout("1rem")
+                    .addElement(
+                        ColumnsLayout("1rem").addColumn(
+                            SchemaColumnsDropdown("Key columns")
+                                .withMultipleSelection()
+                                .bindSchema("component.ports.inputs[0].schema")
+                                .bindProperty("key_columns")
+                                .showErrorsFor("key_columns"),
+                            "5fr",
+                    ))
+                    .addElement(TitleElement("Title"))
+                    .addElement(
+                        ColumnsLayout("1rem").addColumn(
+                            SchemaColumnsDropdown("Key columns")
+                                .withMultipleSelection()
+                                .bindSchema("component.ports.inputs[0].schema")
+                                .bindProperty("key_columns")
+                                .showErrorsFor("key_columns_columns"),
+                            "5fr",
+                    ))
+                    .addElement(
+                        ColumnsLayout("1rem").addColumn(
+                            SchemaColumnsDropdown("Value columns")
+                                .withMultipleSelection()
+                                .bindSchema("component.ports.inputs[0].schema")
+                                .bindProperty("value_columns")
+                                .showErrorsFor("value_columns"),
+                            "5fr",
+                    ))
+                )
+            )
+        )
+
+    def dialog(self) -> Dialog:
+        return Dialog("ColumnParser").addElement(
+            ColumnsLayout(gap="1rem", height="100%")
+            .addColumn(Ports(), "content")
+            .addColumn(
+                StackLayout(height="100%")
+                    .addElement(
+                        ColumnsLayout("1rem").addColumn(
+                            SchemaColumnsDropdown("Key columns")
+                                .withMultipleSelection()
+                                .bindSchema("component.ports.inputs[0].schema")
+                                .bindProperty("key_columns")
+                                .showErrorsFor("key_columns"),
+                            "5fr",
+                    ))
+                    .addElement(
+                        ColumnsLayout("1rem").addColumn(
+                            SchemaColumnsDropdown("Value columns")
+                                .withMultipleSelection()
+                                .bindSchema("component.ports.inputs[0].schema")
+                                .bindProperty("value_columns")
+                                .showErrorsFor("value_columns"),
+                            "5fr",
+                    ))
+            )
+        )
+
+    def _dialog(self) -> Dialog:
+        return Dialog("ColumnParser").addElement(
+            ColumnsLayout(gap="1rem", height="100%")
+            .addColumn(Ports(), "content")
+            .addColumn(
+                StackLayout(height="100%")
+                    .addElement(TitleElement("elt_1"))
+                    .addElement(TitleElement("elt_2"))
+                    .addElement(TitleElement("elt_3"))
+            )
+        )
+        
 
     def validate(self, context: WorkflowContext, component: Component[AndreTestProperties]) -> List[Diagnostic]:
         # Validate the component's state

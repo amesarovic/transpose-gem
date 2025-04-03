@@ -1,0 +1,253 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1",
+      "unitTestNullDataMigrated" : true
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.8.2",
+        "pyPiVersion" : "1.9.36"
+      },
+      "sparkConfigJinjaEnabled" : true
+    },
+    "id" : "1",
+    "uri" : "pipelines/test_01",
+    "sourceSuggestions" : [ {
+      "sourceLabel" : "customers",
+      "sourceDatasetId" : "datasets/customers",
+      "canJoinWith" : [ {
+        "processLabel" : "products_50",
+        "processId" : "rfXUWhKyJEcNkKWHNE9lm$$KloN-RwSYAAaVCPfMn7Ge",
+        "joinColumns" : [ "medium" ],
+        "isRecommended" : true,
+        "properties" : {
+          "columnsSelector" : [ "medium" ],
+          "conditions" : [ {
+            "alias" : "customers",
+            "expression" : "(products_50.medium = customers.medv)",
+            "joinType" : "inner"
+          } ],
+          "expressions" : [ {
+            "alias" : "_c0",
+            "expression" : "customers._c0"
+          }, {
+            "alias" : "crim",
+            "expression" : "customers.crim"
+          }, {
+            "alias" : "zn",
+            "expression" : "customers.zn"
+          }, {
+            "alias" : "indus",
+            "expression" : "customers.indus"
+          }, {
+            "alias" : "chas",
+            "expression" : "customers.chas"
+          }, {
+            "alias" : "nox",
+            "expression" : "customers.nox"
+          }, {
+            "alias" : "rm",
+            "expression" : "customers.rm"
+          }, {
+            "alias" : "age",
+            "expression" : "customers.age"
+          }, {
+            "alias" : "dis",
+            "expression" : "customers.dis"
+          }, {
+            "alias" : "rad",
+            "expression" : "customers.rad"
+          }, {
+            "alias" : "tax",
+            "expression" : "customers.tax"
+          }, {
+            "alias" : "ptratio",
+            "expression" : "customers.ptratio"
+          }, {
+            "alias" : "black",
+            "expression" : "customers.black"
+          }, {
+            "alias" : "lstat",
+            "expression" : "customers.lstat"
+          }, {
+            "alias" : "products",
+            "expression" : "products_50.products"
+          }, {
+            "alias" : "small",
+            "expression" : "products_50.small"
+          }, {
+            "alias" : "medium",
+            "expression" : "products_50.medium"
+          }, {
+            "alias" : "large",
+            "expression" : "products_50.large"
+          } ],
+          "headAlias" : "datasets/customers"
+        }
+      } ]
+    } ],
+    "pipelineSettingsInfo" : {
+      "applicationName" : "test_01",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true,
+      "isNullValuesInUnitTestsEnabled" : true,
+      "sparkConfigOptions" : {
+        "disableSparkCreationTimeConfigGeneration" : true
+      }
+    },
+    "language" : "python",
+    "fabricId" : "23303",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "mesarovicandreprophecyioteam.gemdevelopmenttranspose.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ {
+      "name" : "spark.default.parallelism",
+      "value" : "4"
+    }, {
+      "name" : "spark.sql.legacy.allowUntypedScalaUDF",
+      "value" : "true"
+    } ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "test_01",
+    "configTopLevelPackage" : "test_01",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ ],
+  "processes" : {
+    "rfXUWhKyJEcNkKWHNE9lm$$KloN-RwSYAAaVCPfMn7Ge" : {
+      "id" : "rfXUWhKyJEcNkKWHNE9lm$$KloN-RwSYAAaVCPfMn7Ge",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "products_50",
+        "slug" : "products_50",
+        "x" : -1160,
+        "y" : -720,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Loads product data from a CSV file for analysis.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "o8eZ5znh1lzdpQcJWYyDV$$7O7s6hKmXTTyXV6CZyEGR",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/products_50"
+      }
+    },
+    "mJFzAwrJ4XsIweVF0uN2y$$bfLDeUSwpjeOmPRTPFb2R" : {
+      "id" : "mJFzAwrJ4XsIweVF0uN2y$$bfLDeUSwpjeOmPRTPFb2R",
+      "component" : "AndreTest",
+      "metadata" : {
+        "label" : "AndreTest_1",
+        "slug" : "AndreTest_1",
+        "x" : -960,
+        "y" : -720,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "_mN0vVOztOtv2lwVLoUOd$$3w8cj09sJRNiuL0IBA6j4",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "Au6iZYaRB230qBbiwthVI$$sw-OFnpUwha9bBLfRyPqJ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "my_property" : "default value of my property"
+      },
+      "componentInfo" : {
+        "gemId" : "gems/AndreTest",
+        "projectName" : "gem-development-transpose"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.mJFzAwrJ4XsIweVF0uN2y$$bfLDeUSwpjeOmPRTPFb2R.ports.inputs[0]",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Please connect input port in0",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  } ]
+}

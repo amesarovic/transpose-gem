@@ -23,73 +23,36 @@ class AndreTranspose(ComponentSpec):
         key_columns: list[str] = field(default_factory=list)
         value_columns: list[str] = field(default_factory=list)
 
-    def old_dialog(self) -> Dialog:
-        return Dialog("Transpose").addElement(
-            ColumnsLayout(gap="1rem", height="100%")
-                .addColumn(Ports(), "content")
-        )
-
-    def old_dialog(self) -> Dialog:
-        return Dialog("Transpose").addElement(
-            ColumnsLayout(gap="1rem", height="100%")
-                .addColumn(
-                    SchemaColumnsDropdown("Key columns")
-                      .withMultipleSelection()
-                      .bindSchema("component.ports.inputs[0].schema")
-                      .bindProperty("key_columns")
-                      .showErrorsFor("key_columns")
-                    ,"5fr"
-                )
-                .addColumn(
-                    SchemaColumnsDropdown("Value columns")
-                      .withMultipleSelection()
-                      .bindSchema("component.ports.inputs[0].schema")
-                      .bindProperty("value_columns")
-                      .showErrorsFor("value_columns")
-                    ,"5fr"
-                )
-        )
-
     def dialog(self) -> Dialog:
-        return Dialog("Transpose").addElement(
+        return Dialog("ColumnParser").addElement(
             ColumnsLayout(gap="1rem", height="100%")
-                .addColumn(Ports(), "content")
-                .addColumn(
-                StackLayout(height="100%").addElement(
-                    ColumnsLayout("1rem")
-                    .addColumn(
-                        SchemaColumnsDropdown("Key columns")
-                        .withMultipleSelection()
-                        .bindSchema("component.ports.inputs[0].schema")
-                        .bindProperty("key_columns")
-                        .showErrorsFor("key_columns"),
-                        "5fr",
-                    )
-                    .addColumn(
-                        SchemaColumnsDropdown("Value columns")
-                        .withMultipleSelection()
-                        .bindSchema("component.ports.inputs[0].schema")
-                        .bindProperty("value_columns")
-                        .showErrorsFor("value_columns"),
-                        "5fr",
-                    )
-                )
+            .addColumn(Ports(), "content")
+            .addColumn(
+                StackLayout(height="100%")
+                    .addElement(
+                        ColumnsLayout("1rem").addColumn(
+                            SchemaColumnsDropdown("Key columns")
+                                .withMultipleSelection()
+                                .bindSchema("component.ports.inputs[0].schema")
+                                .bindProperty("key_columns")
+                                .showErrorsFor("key_columns"),
+                            "5fr",
+                    ))
+                    .addElement(
+                        ColumnsLayout("1rem").addColumn(
+                            SchemaColumnsDropdown("Value columns")
+                                .withMultipleSelection()
+                                .bindSchema("component.ports.inputs[0].schema")
+                                .bindProperty("value_columns")
+                                .showErrorsFor("value_columns"),
+                            "5fr",
+                    ))
             )
         )
 
     
 
-    def _dialog(self) -> Dialog:
-        return Dialog("ColumnParser").addElement(
-            ColumnsLayout(gap="1rem", height="100%")
-            .addColumn(Ports(), "content")
-            .addColumn( 
-                StackLayout(height="100%")
-                    .addElement(TitleElement("elt_1"))
-                    .addElement(TitleElement("elt_2"))
-                    .addElement(TitleElement("elt_3"))
-            )   
-        )
+
 
     def validate(self, context: WorkflowContext, component: Component[AndreTransposeProperties]) -> List[Diagnostic]:
         # Validate the component's state
