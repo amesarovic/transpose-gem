@@ -67,6 +67,20 @@ pipelines:
       outputs: []
     subgraphs: []
     dependencies: {}
+  pipelines/test_03:
+    name: test_03
+    description: ''
+    author: mesarovic.andre@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2025-04-03 18:01:30'
+    datasets:
+      inputs:
+      - datasets/products_50
+      outputs: []
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/customers:
     name: customers

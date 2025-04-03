@@ -14,10 +14,10 @@
       "sparkConfigJinjaEnabled" : true
     },
     "id" : "1",
-    "uri" : "pipelines/andre-transpose",
+    "uri" : "pipelines/test_03",
     "sourceSuggestions" : [ ],
     "pipelineSettingsInfo" : {
-      "applicationName" : "andre-transpose",
+      "applicationName" : "test_03",
       "hasApplication" : true,
       "isFunctionsPackageDirDefined" : true,
       "isNullValuesInUnitTestsEnabled" : true,
@@ -82,35 +82,37 @@
       "enabled" : false,
       "value" : 1000
     },
-    "topLevelPackage" : "andretranspose",
-    "configTopLevelPackage" : "andretranspose",
+    "topLevelPackage" : "test_03",
+    "configTopLevelPackage" : "test_03",
     "configurationVersion" : "v2"
   },
   "connections" : [ {
-    "id" : "Kyco5nRxGwcIHdTTmLNJw$$k9bzaL_BGJqmhrJ8zcTDF",
-    "source" : "s8rZZ6na9FHRWqRMJ0guO$$NR9y5YCEtzO6ge-hdYSA5",
-    "sourcePort" : "BtdefkceIq35TDyKlVDeH$$3bidQskHqKmJ7UML04iQl",
-    "target" : "n3fwzo19LgydKpOlhic5q$$SiP07i_p4yww_92jOVO9p",
-    "targetPort" : "A7ZlOXDW6uIFtnkZEfZAR$$Pq14y8opmRxDJw_v9l4sW"
+    "id" : "-QMZ8BKovHucUJ4L-d2IP$$iOI0BP82iYMtVSI7yneh6",
+    "source" : "UDWMvxIawQarMljCDdfcz$$bp_c6vS-IxRYPC_5paJL6",
+    "sourcePort" : "rZzjL_zRwDjuUTs9SttbI$$ACzlOJ_13N3eZOmG9B6tA",
+    "target" : "Msrc84VC-hJHXeBOh28Yi$$HOcqfYBzvs7bPALVQGyxM",
+    "targetPort" : "Ib-0TMfbBxHgWrd6y3LH0$$hsNlij-yVHh7AKXW6TBRg"
   } ],
   "processes" : {
-    "s8rZZ6na9FHRWqRMJ0guO$$NR9y5YCEtzO6ge-hdYSA5" : {
-      "id" : "s8rZZ6na9FHRWqRMJ0guO$$NR9y5YCEtzO6ge-hdYSA5",
+    "UDWMvxIawQarMljCDdfcz$$bp_c6vS-IxRYPC_5paJL6" : {
+      "id" : "UDWMvxIawQarMljCDdfcz$$bp_c6vS-IxRYPC_5paJL6",
       "component" : "Source",
       "metadata" : {
-        "label" : "products_50_1_1",
-        "slug" : "products_50_1_1",
-        "x" : -3500,
-        "y" : -2920,
+        "label" : "products_50",
+        "slug" : "products_50",
+        "x" : -420,
+        "y" : -260,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "Loads product data from a CSV file for analysis.",
+        "autoUpdateComment" : true
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "BtdefkceIq35TDyKlVDeH$$3bidQskHqKmJ7UML04iQl",
+          "id" : "rZzjL_zRwDjuUTs9SttbI$$ACzlOJ_13N3eZOmG9B6tA",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -121,25 +123,23 @@
         "datasetId" : "datasets/products_50"
       }
     },
-    "n3fwzo19LgydKpOlhic5q$$SiP07i_p4yww_92jOVO9p" : {
-      "id" : "n3fwzo19LgydKpOlhic5q$$SiP07i_p4yww_92jOVO9p",
-      "component" : "AmmTranspose2",
+    "Msrc84VC-hJHXeBOh28Yi$$HOcqfYBzvs7bPALVQGyxM" : {
+      "id" : "Msrc84VC-hJHXeBOh28Yi$$HOcqfYBzvs7bPALVQGyxM",
+      "component" : "OrderBy",
       "metadata" : {
-        "label" : "transpose_product_sizes",
-        "slug" : "transpose_product_sizes",
-        "x" : -3320,
-        "y" : -2920,
+        "label" : "OrderBy_1",
+        "slug" : "OrderBy_1",
+        "x" : -180,
+        "y" : -260,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Transforms product size data into a more accessible format, making it easier to analyze and compare different product sizes.",
-        "autoUpdateComment" : true,
         "dataPreview" : false
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "A7ZlOXDW6uIFtnkZEfZAR$$Pq14y8opmRxDJw_v9l4sW",
+          "id" : "Ib-0TMfbBxHgWrd6y3LH0$$hsNlij-yVHh7AKXW6TBRg",
           "slug" : "in0",
           "schema" : {
             "type" : "struct",
@@ -184,7 +184,7 @@
           "isStreaming" : false
         } ],
         "outputs" : [ {
-          "id" : "N5HBldNqRXaUeDA8EwQRH$$MzoMV4VQY6wbBGtrsbVSe",
+          "id" : "t4kbT2-1qn9qu_7oOisU9$$kYCAMg5y9n5Gl4vvGsNnQ",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -192,13 +192,12 @@
         "autoUpdateOnRun" : false
       },
       "properties" : {
-        "pivot_column" : "pivot column",
-        "key_columns" : [ "products" ],
-        "value_columns" : [ "small", "medium", "large" ]
+        "columnsSelector" : [ ],
+        "orders" : [ ]
       },
       "componentInfo" : {
-        "gemId" : "gems/AmmTranspose2",
-        "projectName" : "gem-development-transpose"
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.40&projectSubscriptionProjectId=12654&path=gems/OrderBy",
+        "projectName" : "ProphecySparkBasicsPython"
       }
     }
   },
@@ -210,7 +209,7 @@
     "autoUpdateOnRun" : false
   },
   "diagnostics" : [ {
-    "property" : "$.workflow.processes.n3fwzo19LgydKpOlhic5q$$SiP07i_p4yww_92jOVO9p",
+    "property" : "$.workflow.processes.Msrc84VC-hJHXeBOh28Yi$$HOcqfYBzvs7bPALVQGyxM.properties.orders",
     "range" : {
       "start" : {
         "line" : 0,
@@ -222,7 +221,7 @@
       }
     },
     "severity" : 1,
-    "message" : "Error occurred while doing Schema Analysis: name 'AmmTranspose2Properties' is not defined",
+    "message" : "At least one order rule has to be specified",
     "tags" : [ ],
     "relatedInformation" : [ ]
   } ]

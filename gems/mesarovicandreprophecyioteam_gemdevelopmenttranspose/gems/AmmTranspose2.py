@@ -50,69 +50,57 @@ class AmmTranspose2(ComponentSpec):
         )
 
     def validate(self, context: WorkflowContext, component: Component[AmmTranspose2Properties]) -> List[Diagnostic]:
-        # Validate the component's state
-        return []
-
-    def _todo_validate(self, context: WorkflowContext, component: Component[AmmTranspose2Properties]) -> List[Diagnostic]:
+        print(">> validate: key_columns.0:", component.properties.key_columns)
+        print(">> validate: value_columns.0:", component.properties.value_columns)
         diagnostics = []
-        pivotColMsgDiag = "Pivot column"
-        if component.properties.limit.diagnosticMessages is not None and len(component.properties.limit.diagnosticMessages) > 0:
-            for message in component.properties.pivot_column.diagnosticMessages:
-                diagnostics.append(Diagnostic("properties.pivot_column", message, SeverityLevelEnum.Error))
-        else:
-            resolved = component.properties.limit.value
-            if resolved <= 0:
-                diagnostics.append(Diagnostic("properties.pivot_column", pivotColMsgDiag, SeverityLevelEnum.Error))
-            else:
-                pass
+        if len(component.properties.key_columns) == 0:
+             diagnostics.append(
+                Diagnostic("properties.key_columns", "At least one key column has to be specified", SeverityLevelEnum.Error))
+        if len(component.properties.value_columns) == 0:
+             diagnostics.append(
+                Diagnostic("properties.value_columns", "At least one value column has to be specified", SeverityLevelEnum.Error))
+        common = list(set(component.properties.key_columns).intersection(component.properties.value_columns))
+        if common:
+            diagnostics.append(
+                Diagnostic(f"properties.value_columns", f"Key and value columns cannot overlap: {common}", SeverityLevelEnum.Error))
         return diagnostics
 
     def onChange(self, context: WorkflowContext, oldState: Component[AmmTranspose2Properties], newState: Component[AmmTranspose2Properties]) -> Component[
     AmmTranspose2Properties]:
         # Handle changes in the component's state and return the new state
         return newState
-    
-    def foo(df):
-        return df.limit(6)
+
 
     class AmmTranspose2Code(ComponentCode):
         def __init__(self, newProps):
             self.props: AmmTranspose2.AmmTranspose2Properties = newProps
             
-        def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
+        def apply(self, spark: SparkSession, df: DataFrame) -> DataFrame:
             import pyspark.sql.functions as F
 
-            #print(">> Hello Transpose")
-            print(">> key_columns.0:", self.props.key_columns)
-            print(">> value_columns.0:", self.props.value_columns)
+            print(">> apply: key_columns.0:", self.props.key_columns)
+            print(">> apply: value_columns.0:", self.props.value_columns)
         
-            key_columns = [ "products" ]
-            value_columns = [ "small", "medium", "large" ]
-            print(">> key_columns.1:", key_columns)
-            print(">> value_columns.1:", value_columns)
-
-            name_column = "name",
-            name_column = "value"
-            df = in0
- 
-            print(">> Hello Transpose")
+            #key_columns = [ "products" ]
+            #value_columns = [ "small", "medium", "large" ]
+            #print(">> apply: key_columns.1:", key_columns)
+            #print(">> apply: value_columns.1:", value_columns)
+             
             # NOTE: optimizer doesn't yet support list comprehension
             available_data_columns = []
-            for col_name in value_columns:
+            for col_name in self.props.value_columns:
                 if col_name in df.columns:
                     available_data_columns.append(col_name)
 
             dfs = []
             for data_col_name in available_data_columns:
-                selected_df = df.select([F.col(key_col) for key_col in key_columns] +
-                                [F.lit(data_col_name).cast("string").alias(name_column),
-                                 F.col(data_col_name).cast("string").alias(name_column)])
+                selected_df = df.select([F.col(key_col) for key_col in self.props.key_columns] +
+                                [F.lit(data_col_name).cast("string").alias("name"),
+                                 F.col(data_col_name).cast("string").alias("value")])
                 dfs.append(selected_df)
 
             transposed_df = dfs[0]
             for other_df in dfs[1:]:
                 transposed_df = transposed_df.union(other_df)
  
-            print(">> END")
-            #print(">> transposed_df:", transposed_df.count())
             return transposed_df
