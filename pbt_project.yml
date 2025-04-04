@@ -172,6 +172,18 @@ gemContainer:
       gemType: ComponentGem
       dependencies: []
       createdAt: '2025-04-03 18:38:23'
+    gems/AmmTranspose2:
+      name: AmmTranspose2
+      category: Transform
+      subCategory: ''
+      description: null
+      author: mesarovic.andre@prophecy.io
+      mode: batch
+      files:
+      - mesarovicandreprophecyioteam_gemdevelopmenttranspose/gems/AmmTranspose2.py
+      gemType: ComponentGem
+      dependencies: []
+      createdAt: '2025-04-04 01:51:59'
   dependencies: null
 functions:
   author: null

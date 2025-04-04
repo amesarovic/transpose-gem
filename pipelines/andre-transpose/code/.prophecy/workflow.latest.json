@@ -92,6 +92,12 @@
     "sourcePort" : "BtdefkceIq35TDyKlVDeH$$3bidQskHqKmJ7UML04iQl",
     "target" : "Tns_1Dn_0XSiYQeIw6chz$$Jg8BAiRha-nSJFDiQmZm4",
     "targetPort" : "-qHY1u-S4O85tDPUQt9o_$$wBb9mgUXwtBjlA0_F61Op"
+  }, {
+    "id" : "d2KgnXqa6M4Tb7A6wFD24",
+    "source" : "5H-N2z8byJgPXgIrx9fUx$$A5iaEFRCgrZ-TkwSjwr6a",
+    "sourcePort" : "6FS-k6rNx-sWYeQt2oiLo$$ECFjGq73FfPXlHHG6yi_p",
+    "target" : "4yP5-PDtBisHkXq54iHf7$$hfIcBpe_zv-gP0VaoSB3F",
+    "targetPort" : "XLN_JA6seSHeY3620omL0$$dM8Qd51c4wjxqvLekKoYK"
   } ],
   "processes" : {
     "s8rZZ6na9FHRWqRMJ0guO$$NR9y5YCEtzO6ge-hdYSA5" : {
@@ -100,8 +106,8 @@
       "metadata" : {
         "label" : "products_50_1_1",
         "slug" : "products_50_1_1",
-        "x" : -3940,
-        "y" : -3040,
+        "x" : -4260,
+        "y" : -3260,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -127,8 +133,8 @@
       "metadata" : {
         "label" : "AmmTranspose_1",
         "slug" : "AmmTranspose_1",
-        "x" : -3660,
-        "y" : -3040,
+        "x" : -3980,
+        "y" : -3260,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -193,10 +199,113 @@
       "properties" : {
         "pivot_column" : "pivot column",
         "key_columns" : [ "products" ],
-        "value_columns" : [ "small", "large" ]
+        "value_columns" : [ "small", "medium", "large" ]
       },
       "componentInfo" : {
         "gemId" : "gems/AmmTranspose",
+        "projectName" : "gem-development-transpose"
+      }
+    },
+    "5H-N2z8byJgPXgIrx9fUx$$A5iaEFRCgrZ-TkwSjwr6a" : {
+      "id" : "5H-N2z8byJgPXgIrx9fUx$$A5iaEFRCgrZ-TkwSjwr6a",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "products_50_1_1_1",
+        "slug" : "products_50_1_1_1",
+        "x" : -4260,
+        "y" : -3100,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "6FS-k6rNx-sWYeQt2oiLo$$ECFjGq73FfPXlHHG6yi_p",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/products_50"
+      }
+    },
+    "4yP5-PDtBisHkXq54iHf7$$hfIcBpe_zv-gP0VaoSB3F" : {
+      "id" : "4yP5-PDtBisHkXq54iHf7$$hfIcBpe_zv-gP0VaoSB3F",
+      "component" : "AmmTranspose2",
+      "metadata" : {
+        "label" : "AmmTranspose2_1",
+        "slug" : "AmmTranspose2_1",
+        "x" : -3980,
+        "y" : -3100,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "XLN_JA6seSHeY3620omL0$$dM8Qd51c4wjxqvLekKoYK",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "products",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "small",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "medium",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "large",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "wCPeR0cYTNdBJgDxl6IdN$$8k1Sv6ASst894JPP_Ha0f",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "my_property" : "default value of my property"
+      },
+      "componentInfo" : {
+        "gemId" : "gems/AmmTranspose2",
         "projectName" : "gem-development-transpose"
       }
     }
@@ -222,6 +331,38 @@
     },
     "severity" : 1,
     "message" : "Error occurred while doing Schema Analysis: name 'AmmTransposeProperties' is not defined",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.4yP5-PDtBisHkXq54iHf7$$hfIcBpe_zv-gP0VaoSB3F.properties.key_columns",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "At least one key column has to be specified",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.4yP5-PDtBisHkXq54iHf7$$hfIcBpe_zv-gP0VaoSB3F.properties.value_columns",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "At least one value column has to be specified",
     "tags" : [ ],
     "relatedInformation" : [ ]
   } ]
