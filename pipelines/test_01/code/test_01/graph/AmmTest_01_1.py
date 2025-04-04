@@ -7,5 +7,7 @@ from test_01.config.ConfigStore import *
 from test_01.functions import *
 
 def AmmTest_01_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
-    # This method contains logic used to generate the spark code from the given inputs.
-    return in0
+    print(">> apply")
+    df1 = in0.select(*[col for col in in0.columns if col != "products"])
+
+    return df1.limit(5)

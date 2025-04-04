@@ -118,7 +118,7 @@
       "metadata" : {
         "label" : "products_50_1",
         "slug" : "products_50_1",
-        "x" : -2080,
+        "x" : -1640,
         "y" : -1140,
         "phase" : 0,
         "cache" : false,
@@ -147,8 +147,8 @@
       "metadata" : {
         "label" : "AmmGitLimit_1",
         "slug" : "AmmGitLimit_1",
-        "x" : -1880,
-        "y" : -960,
+        "x" : -1420,
+        "y" : -980,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -223,7 +223,7 @@
       "metadata" : {
         "label" : "limit_to_20",
         "slug" : "limit_to_20",
-        "x" : -1880,
+        "x" : -1440,
         "y" : -1140,
         "phase" : 0,
         "cache" : false,
@@ -301,8 +301,8 @@
       "metadata" : {
         "label" : "products_50_1_1_1",
         "slug" : "products_50_1_1_1",
-        "x" : -2080,
-        "y" : -800,
+        "x" : -1620,
+        "y" : -820,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -330,8 +330,8 @@
       "metadata" : {
         "label" : "AmmTest_01_1",
         "slug" : "AmmTest_01_1",
-        "x" : -1420,
-        "y" : -1140,
+        "x" : -2000,
+        "y" : -1160,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -406,8 +406,8 @@
       "metadata" : {
         "label" : "products_50",
         "slug" : "products_50",
-        "x" : -2080,
-        "y" : -960,
+        "x" : -1620,
+        "y" : -980,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -435,8 +435,8 @@
       "metadata" : {
         "label" : "AmmLimitNoop_1",
         "slug" : "AmmLimitNoop_1",
-        "x" : -1880,
-        "y" : -800,
+        "x" : -1420,
+        "y" : -820,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -511,8 +511,8 @@
       "metadata" : {
         "label" : "products_50_1_1_1_1",
         "slug" : "products_50_1_1_1_1",
-        "x" : -1620,
-        "y" : -1140,
+        "x" : -2200,
+        "y" : -1160,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,

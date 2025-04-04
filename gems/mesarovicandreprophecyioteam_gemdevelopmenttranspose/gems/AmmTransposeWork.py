@@ -6,15 +6,15 @@ from prophecy.cb.server.base import WorkflowContext
 from prophecy.cb.server.base.datatypes import SInt, SString
 from prophecy.cb.ui.uispec import *
 
-class AmmTransposeNew(ComponentSpec):
-    name: str = "AmmTransposeNew"
+class AmmTransposeWork(ComponentSpec):
+    name: str = "AmmTransposeWork"
     category: str = "Transform"
 
     def optimizeCode(self) -> bool:
         return True
 
     @dataclass(frozen=True)
-    class AmmTransposeNewProperties(ComponentProperties):
+    class AmmTransposeWorkProperties(ComponentProperties):
         pivot_column: SString = SString("pivot column")
         key_columns: list[str] = field(default_factory=list)
         value_columns: list[str] = field(default_factory=list)
@@ -46,7 +46,7 @@ class AmmTransposeNew(ComponentSpec):
             )
         )
 
-    def validate(self, context: WorkflowContext, component: Component[AmmTransposeNewProperties]) -> List[Diagnostic]:
+    def validate(self, context: WorkflowContext, component: Component[AmmTransposeWorkProperties]) -> List[Diagnostic]:
         diagnostics = []
         if len(component.properties.key_columns) == 0:
              diagnostics.append(
@@ -60,24 +60,27 @@ class AmmTransposeNew(ComponentSpec):
                 Diagnostic(f"properties.value_columns", f"Key and value columns cannot overlap: {common}", SeverityLevelEnum.Error))
         return diagnostics
 
-    def onChange(self, context: WorkflowContext, oldState: Component[AmmTransposeNewProperties], newState: Component[AmmTransposeNewProperties]) -> Component[
-    AmmTransposeNewProperties]:
+    def onChange(self, context: WorkflowContext, oldState: Component[AmmTransposeWorkProperties], newState: Component[AmmTransposeWorkProperties]) -> Component[
+    AmmTransposeWorkProperties]:
         return newState
 
 
-    class AmmTransposeNewCode(ComponentCode):
+    class AmmTransposeWorkCode(ComponentCode):
         def __init__(self, newProps):
-            self.props: AmmTransposeNew.AmmTransposeNewProperties = newProps
+            self.props: AmmTransposeWork.AmmTransposeWorkProperties = newProps
  
         def apply(self, spark: SparkSession, df: DataFrame) -> DataFrame:
             import pyspark.sql.functions as F
+            print(">> work.appy.2")
 
             # NOTE: optimizer doesn't yet support list comprehension
             available_data_columns = []
+
             for col_name in self.props.value_columns:
                 if col_name in df.columns:
                     available_data_columns.append(col_name)
 
+            # NOTE: this code causes the
             dfs = []
             for data_col_name in available_data_columns:
                 selected_df = df.select([F.col(key_col) for key_col in self.props.key_columns] +
@@ -85,8 +88,4 @@ class AmmTransposeNew(ComponentSpec):
                                  F.col(data_col_name).cast("string").alias("value")])
                 dfs.append(selected_df)
 
-            transposed_df = dfs[0]
-            for other_df in dfs[1:]:
-                transposed_df = transposed_df.union(other_df)
- 
-            return transposed_df
+            return df

@@ -78,24 +78,12 @@ class AmmTransposeNew(ComponentSpec):
                 if col_name in df.columns:
                     available_data_columns.append(col_name)
 
-            #dfs = []
-            #for data_col_name in available_data_columns:
-            #    selected_df = df.select([F.col(key_col) for key_col in self.props.key_columns] +
-            #                    [F.lit(data_col_name).cast("string").alias("name"),
-            #                     F.col(data_col_name).cast("string").alias("value")])
-            #    dfs.append(selected_df)
-
+            dfs = []
             for data_col_name in available_data_columns:
-                keyColumns: SubstitueDisabled = self.props.key_columns
-                for data_col_name in available_data_columns:
-                    selection: SubstitueDisabled = []
-                    for key_col in keyColumns:
-                        selection.append(col(key_col))
-                    selection.append(lit(data_col_name).cast("string").alias("Name"))
-                    selection.append(col(data_col_name).cast("string").alias("Value"))
-                
-                    df_selected: SubstitueDisabled = in0.select(*selection)
-                    dfs.append(df_selected)
+                selected_df = df.select([F.col(key_col) for key_col in self.props.key_columns] +
+                                [F.lit(data_col_name).cast("string").alias("name"),
+                                 F.col(data_col_name).cast("string").alias("value")])
+                dfs.append(selected_df)
 
             transposed_df = dfs[0]
             for other_df in dfs[1:]:

@@ -117,6 +117,16 @@ class AmmTest_01(ComponentSpec):
             self.props: AmmTest_01.AmmTest_01Properties = newProps
 
         def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
-            # This method contains logic used to generate the spark code from the given inputs.
-            return in0
+            print(">> apply")
+            columns = [ col for col in in0.columns if col != "products"]
+            df2 = in0.select(*columns)
+            df2 = df2.limit(5)
+            return df2
+        
+        def new_apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
+            print(">> apply")
+            columns = [ col for col in in0.columns if col != "products"]
+            df2 = in0.select(*columns)
+            df2 = df2.limit(5)
+            return df2
 
