@@ -5,18 +5,16 @@ from pyspark.sql.functions import *
 from prophecy.cb.server.base import WorkflowContext
 from prophecy.cb.server.base.datatypes import SInt, SString
 from prophecy.cb.ui.uispec import *
-import pyspark.sql.functions as F
 
-class AmmTranspose2(ComponentSpec):
-    name: str = "AmmTranspose2"
+class AmmTransposeNew(ComponentSpec):
+    name: str = "AmmTransposeNew"
     category: str = "Transform"
 
     def optimizeCode(self) -> bool:
-        # Return whether code optimization is enabled for this component
         return True
 
     @dataclass(frozen=True)
-    class AmmTranspose2Properties(ComponentProperties):
+    class AmmTransposeNewProperties(ComponentProperties):
         pivot_column: SString = SString("pivot column")
         key_columns: list[str] = field(default_factory=list)
         value_columns: list[str] = field(default_factory=list)
@@ -48,9 +46,7 @@ class AmmTranspose2(ComponentSpec):
             )
         )
 
-    def validate(self, context: WorkflowContext, component: Component[AmmTranspose2Properties]) -> List[Diagnostic]:
-        print(">> validate: key_columns.0:", component.properties.key_columns)
-        print(">> validate: value_columns.0:", component.properties.value_columns)
+    def validate(self, context: WorkflowContext, component: Component[AmmTransposeNewProperties]) -> List[Diagnostic]:
         diagnostics = []
         if len(component.properties.key_columns) == 0:
              diagnostics.append(
@@ -64,43 +60,45 @@ class AmmTranspose2(ComponentSpec):
                 Diagnostic(f"properties.value_columns", f"Key and value columns cannot overlap: {common}", SeverityLevelEnum.Error))
         return diagnostics
 
-    def onChange(self, context: WorkflowContext, oldState: Component[AmmTranspose2Properties], newState: Component[AmmTranspose2Properties]) -> Component[
-    AmmTranspose2Properties]:
-        # Handle changes in the component's state and return the new state
+    def onChange(self, context: WorkflowContext, oldState: Component[AmmTransposeNewProperties], newState: Component[AmmTransposeNewProperties]) -> Component[
+    AmmTransposeNewProperties]:
         return newState
 
 
-    class AmmTranspose2Code(ComponentCode):
+    class AmmTransposeNewCode(ComponentCode):
         def __init__(self, newProps):
-            self.props: AmmTranspose2.AmmTranspose2Properties = newProps
-            
+            self.props: AmmTransposeNew.AmmTransposeNewProperties = newProps
+ 
         def apply(self, spark: SparkSession, df: DataFrame) -> DataFrame:
             import pyspark.sql.functions as F
 
-            print(">> apply: key_columns.0:", self.props.key_columns)
-            print(">> apply: value_columns.0:", self.props.value_columns)
-        
-            #key_columns = [ "products" ]
-            #value_columns = [ "small", "medium", "large" ]
-            #print(">> apply: key_columns.1:", key_columns)
-            #print(">> apply: value_columns.1:", value_columns)
-             
             # NOTE: optimizer doesn't yet support list comprehension
             available_data_columns = []
             for col_name in self.props.value_columns:
                 if col_name in df.columns:
                     available_data_columns.append(col_name)
 
-            dfs = []
+            #dfs = []
+            #for data_col_name in available_data_columns:
+            #    selected_df = df.select([F.col(key_col) for key_col in self.props.key_columns] +
+            #                    [F.lit(data_col_name).cast("string").alias("name"),
+            #                     F.col(data_col_name).cast("string").alias("value")])
+            #    dfs.append(selected_df)
+
             for data_col_name in available_data_columns:
-                selected_df = df.select([F.col(key_col) for key_col in self.props.key_columns] +
-                                [F.lit(data_col_name).cast("string").alias("name"),
-                                 F.col(data_col_name).cast("string").alias("value")])
-                dfs.append(selected_df)
+                keyColumns: SubstitueDisabled = self.props.key_columns
+                for data_col_name in available_data_columns:
+                    selection: SubstitueDisabled = []
+                    for key_col in keyColumns:
+                        selection.append(col(key_col))
+                    selection.append(lit(data_col_name).cast("string").alias("Name"))
+                    selection.append(col(data_col_name).cast("string").alias("Value"))
+                
+                    df_selected: SubstitueDisabled = in0.select(*selection)
+                    dfs.append(df_selected)
 
             transposed_df = dfs[0]
             for other_df in dfs[1:]:
                 transposed_df = transposed_df.union(other_df)
  
             return transposed_df
-
