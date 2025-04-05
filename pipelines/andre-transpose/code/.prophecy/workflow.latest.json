@@ -104,6 +104,12 @@
     "sourcePort" : "ir8ET66Fp1VM54tUZzu0W$$aI5w-Dci2q7SaDqTX-vs8",
     "target" : "_GzIEuBaQo89HDiiWCEOX$$sMkXCxBsuBAoAKfoTclwy",
     "targetPort" : "JWd2oQqJ6uSJ_p0M-ctxt$$tvoxtV1wycbstwRf7cVGg"
+  }, {
+    "id" : "Lt_9uYU51xHjEWlr_xX-V$$EyyO5cr-tli8_JFpAz1H3",
+    "source" : "JGzcsR8wY3mfVIbqM-WXd$$TesXfwr7wCj6aFVRFaIBD",
+    "sourcePort" : "gB6hRj2ECenEogLY_Jezc$$wP3TuC3IyJmREzhqV3tve",
+    "target" : "UynkcWX7NVcJfWrCd3ytS$$WZpYVtUgeYhQNgpp8KO0A",
+    "targetPort" : "fUUlFMYg3-XvUxAo_N_Bb$$mfoGvkR8g6AL0_Juk3kG7"
   } ],
   "processes" : {
     "lIV2OIel-bSd2fbz0fNdq$$LANmmGn8F0WSkrsK4bO91" : {
@@ -137,9 +143,9 @@
       "id" : "_GzIEuBaQo89HDiiWCEOX$$sMkXCxBsuBAoAKfoTclwy",
       "component" : "AmmTranspose",
       "metadata" : {
-        "label" : "transpose_data_frame_1",
-        "slug" : "transpose_data_frame_1",
-        "x" : -8120,
+        "label" : "AmmTranspose",
+        "slug" : "AmmTranspose",
+        "x" : -8280,
         "y" : -5500,
         "phase" : 0,
         "cache" : false,
@@ -219,7 +225,7 @@
       "metadata" : {
         "label" : "products_02_1",
         "slug" : "products_02_1",
-        "x" : -8340,
+        "x" : -8500,
         "y" : -5500,
         "phase" : 0,
         "cache" : false,
@@ -238,6 +244,113 @@
       },
       "properties" : {
         "datasetId" : "datasets/products_02"
+      }
+    },
+    "JGzcsR8wY3mfVIbqM-WXd$$TesXfwr7wCj6aFVRFaIBD" : {
+      "id" : "JGzcsR8wY3mfVIbqM-WXd$$TesXfwr7wCj6aFVRFaIBD",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "products_02_1_1",
+        "slug" : "products_02_1_1",
+        "x" : -8480,
+        "y" : -5320,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "gB6hRj2ECenEogLY_Jezc$$wP3TuC3IyJmREzhqV3tve",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/products_02"
+      }
+    },
+    "UynkcWX7NVcJfWrCd3ytS$$WZpYVtUgeYhQNgpp8KO0A" : {
+      "id" : "UynkcWX7NVcJfWrCd3ytS$$WZpYVtUgeYhQNgpp8KO0A",
+      "component" : "AmmTransposeNoOpt",
+      "metadata" : {
+        "label" : "NoOptTranspose",
+        "slug" : "NoOptTranspose",
+        "x" : -8280,
+        "y" : -5320,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Transforms product data into a more accessible format for analysis, allowing for easier comparison across different sizes of products.",
+        "autoUpdateComment" : true,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "fUUlFMYg3-XvUxAo_N_Bb$$mfoGvkR8g6AL0_Juk3kG7",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "products",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "small",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "medium",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "large",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "ipNFE4GfFnW_P39E4Q3-9$$3txXgWER4fIATw9Bo7Yzg",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "pivot_column" : "pivot column",
+        "key_columns" : [ "products" ],
+        "value_columns" : [ "small", "medium", "large" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gems/AmmTransposeNoOpt",
+        "projectName" : "gem-development-transpose"
       }
     },
     "aw0XNUKKLQQhyO-CubuyV$$XphRlXKj7G47KgKc7hIKP" : {
@@ -271,9 +384,9 @@
       "id" : "X2acGB1wn7aJDFS5rGOYe$$II7CsgINyi5yik2BUXRKJ",
       "component" : "AmmTransposeWork",
       "metadata" : {
-        "label" : "transpose_work",
-        "slug" : "transpose_work",
-        "x" : -7600,
+        "label" : "Work2Transpose",
+        "slug" : "Work2Transpose",
+        "x" : -7680,
         "y" : -5340,
         "phase" : 0,
         "cache" : false,
@@ -351,8 +464,8 @@
       "id" : "IZvO3cJBIDr_iOvrU3S7K$$1zFAoEZS7iasc6HEJjIBm",
       "component" : "AmmTransposeWork",
       "metadata" : {
-        "label" : "transpose_data_frame",
-        "slug" : "transpose_data_frame",
+        "label" : "WorkTranspose",
+        "slug" : "WorkTranspose",
         "x" : -7680,
         "y" : -5500,
         "phase" : 0,
@@ -434,5 +547,22 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  }
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.IZvO3cJBIDr_iOvrU3S7K$$1zFAoEZS7iasc6HEJjIBm",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Error occurred while doing Schema Analysis: name 'other_df' is not defined",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  } ]
 }

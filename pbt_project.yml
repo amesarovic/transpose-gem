@@ -212,6 +212,18 @@ gemContainer:
       gemType: ComponentGem
       dependencies: []
       createdAt: '2025-04-04 23:13:24'
+    gems/AmmTransposeNoOpt:
+      name: AmmTransposeNoOpt
+      category: Transform
+      subCategory: ''
+      description: null
+      author: mesarovic.andre@prophecy.io
+      mode: batch
+      files:
+      - mesarovicandreprophecyioteam_gemdevelopmenttranspose/gems/AmmTransposeNoOpt.py
+      gemType: ComponentGem
+      dependencies: []
+      createdAt: '2025-04-05 17:55:18'
   dependencies: null
 functions:
   author: null
