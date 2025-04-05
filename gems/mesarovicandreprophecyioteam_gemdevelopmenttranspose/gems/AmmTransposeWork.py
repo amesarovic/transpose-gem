@@ -6,12 +6,13 @@ from prophecy.cb.server.base import WorkflowContext
 from prophecy.cb.server.base.datatypes import SInt, SString
 from prophecy.cb.ui.uispec import *
 
+
 class AmmTransposeWork(ComponentSpec):
     name: str = "AmmTransposeWork"
     category: str = "Transform"
 
     def optimizeCode(self) -> bool:
-        return True
+        return False # NOTE: If True then fails with "Error occurred while doing Schema Analysis: name 'AmmTransposeProperties'
 
     @dataclass(frozen=True)
     class AmmTransposeWorkProperties(ComponentProperties):
@@ -71,7 +72,9 @@ class AmmTransposeWork(ComponentSpec):
  
         def apply(self, spark: SparkSession, df: DataFrame) -> DataFrame:
             import pyspark.sql.functions as F
-            print(">> work.appy.2")
+            import time
+            dt = time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime(time.time()))
+            print(f">> work.appy: {dt}")
 
             # NOTE: optimizer doesn't yet support list comprehension
             available_data_columns = []
@@ -84,8 +87,12 @@ class AmmTransposeWork(ComponentSpec):
             dfs = []
             for data_col_name in available_data_columns:
                 selected_df = df.select([F.col(key_col) for key_col in self.props.key_columns] +
-                                [F.lit(data_col_name).cast("string").alias("name"),
-                                 F.col(data_col_name).cast("string").alias("value")])
+                                [F.lit(data_col_name).cast("string").alias("Name"),
+                                 F.col(data_col_name).cast("string").alias("Value")])
                 dfs.append(selected_df)
 
-            return df
+            transposed_df = dfs[0]
+            for other_df in dfs[1:]:
+                transposed_df = transposed_df.union(other_df)
+
+            return transposed_df

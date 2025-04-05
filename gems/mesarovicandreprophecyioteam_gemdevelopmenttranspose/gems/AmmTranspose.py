@@ -11,7 +11,7 @@ class AmmTranspose(ComponentSpec):
     category: str = "Transform"
 
     def optimizeCode(self) -> bool:
-        return True
+        return False
 
     @dataclass(frozen=True)
     class AmmTransposeProperties(ComponentProperties):

@@ -49,6 +49,7 @@ pipelines:
     createdAt: '2025-04-01 17:57:07'
     datasets:
       inputs:
+      - datasets/products_02
       - datasets/products_50
       outputs: []
     subgraphs: []
@@ -108,6 +109,19 @@ datasets:
         description: ''
         author: mesarovic.andre@prophecy.io
         createdAt: '2025-04-01 18:16:36'
+  datasets/products_02:
+    name: products_02
+    description: ''
+    author: mesarovic.andre@prophecy.io
+    createdAt: '2025-04-05 03:37:37'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 23303
+        datasetType: File
+        description: ''
+        author: mesarovic.andre@prophecy.io
+        createdAt: '2025-04-05 03:37:37'
 templates: {}
 jobs: {}
 gemContainer:
