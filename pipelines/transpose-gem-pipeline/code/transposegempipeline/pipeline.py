@@ -7,10 +7,10 @@ from prophecy.utils import *
 from transposegempipeline.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    df_products_02 = products_02(spark)
-    df_NewTranspose = NewTranspose(spark, df_products_02)
     df_products_02_1 = products_02_1(spark)
-    df_NoOptTranspose = NoOptTranspose(spark, df_products_02_1)
+    df_products_02_2 = products_02_2(spark)
+    df_transpose_product_sizes = transpose_product_sizes(spark, df_products_02_2)
+    df_transpose_no_opt = transpose_no_opt(spark, df_products_02_1)
 
 def main():
     spark = SparkSession.builder.enableHiveSupport().appName("transpose-gem-pipeline").getOrCreate()

@@ -1,4 +1,4 @@
-from .NoOptTranspose import NoOptTranspose
-from .NewTranspose import NewTranspose
-from .products_02 import products_02
+from .transpose_no_opt import transpose_no_opt
 from .products_02_1 import products_02_1
+from .transpose_product_sizes import transpose_product_sizes
+from .products_02_2 import products_02_2

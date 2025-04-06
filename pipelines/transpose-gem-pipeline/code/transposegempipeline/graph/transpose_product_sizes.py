@@ -3,10 +3,10 @@ from pyspark.sql.functions import *
 from pyspark.sql.types import *
 from prophecy.utils import *
 from prophecy.libs import typed_lit
-from andretranspose.config.ConfigStore import *
-from andretranspose.functions import *
+from transposegempipeline.config.ConfigStore import *
+from transposegempipeline.functions import *
 
-def NewTranspose(spark: SparkSession, in0: DataFrame) -> DataFrame:
+def transpose_product_sizes(spark: SparkSession, in0: DataFrame) -> DataFrame:
     import pyspark.sql.functions as F
     available_data_columns = []
 

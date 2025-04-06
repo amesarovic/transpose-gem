@@ -662,6 +662,70 @@
     "autoUpdateOnRun" : false
   },
   "diagnostics" : [ {
+    "property" : "$.workflow.processes._GzIEuBaQo89HDiiWCEOX$$sMkXCxBsuBAoAKfoTclwy",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Could not find the spec for AmmTranspose",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.UynkcWX7NVcJfWrCd3ytS$$WZpYVtUgeYhQNgpp8KO0A",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Could not find the spec for AmmTransposeNoOpt",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.X2acGB1wn7aJDFS5rGOYe$$II7CsgINyi5yik2BUXRKJ",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Could not find the spec for AmmTransposeWork",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.2u1KqLMGK41sLdUbHXTTB$$Kd3d23Sdn96IRo-OvjIMV",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Could not find the spec for AmmTransposeNew",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
     "property" : "$.workflow.processes.IZvO3cJBIDr_iOvrU3S7K$$1zFAoEZS7iasc6HEJjIBm",
     "range" : {
       "start" : {
@@ -674,7 +738,7 @@
       }
     },
     "severity" : 1,
-    "message" : "Error occurred while doing Schema Analysis: name 'other_df' is not defined",
+    "message" : "Could not find the spec for AmmTransposeWork",
     "tags" : [ ],
     "relatedInformation" : [ ]
   } ]

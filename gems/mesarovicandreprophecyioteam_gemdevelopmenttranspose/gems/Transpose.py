@@ -6,15 +6,15 @@ from prophecy.cb.server.base import WorkflowContext
 from prophecy.cb.server.base.datatypes import SInt, SString
 from prophecy.cb.ui.uispec import *
 
-class AmmTransposeNew(ComponentSpec):
-    name: str = "AmmTransposeNew"
+class Transpose(ComponentSpec):
+    name: str = "Transpose"
     category: str = "Transform"
 
     def optimizeCode(self) -> bool:
         return True
 
     @dataclass(frozen=True)
-    class AmmTransposeNewProperties(ComponentProperties):
+    class TransposeProperties(ComponentProperties):
         pivot_column: SString = SString("pivot column")
         key_columns: list[str] = field(default_factory=list)
         value_columns: list[str] = field(default_factory=list)
@@ -46,7 +46,7 @@ class AmmTransposeNew(ComponentSpec):
             )
         )
 
-    def validate(self, context: WorkflowContext, component: Component[AmmTransposeNewProperties]) -> List[Diagnostic]:
+    def validate(self, context: WorkflowContext, component: Component[TransposeProperties]) -> List[Diagnostic]:
         diagnostics = []
         if len(component.properties.key_columns) == 0:
              diagnostics.append(
@@ -60,14 +60,14 @@ class AmmTransposeNew(ComponentSpec):
                 Diagnostic(f"properties.value_columns", f"Key and value columns cannot overlap: {common}", SeverityLevelEnum.Error))
         return diagnostics
 
-    def onChange(self, context: WorkflowContext, oldState: Component[AmmTransposeNewProperties], newState: Component[AmmTransposeNewProperties]) -> Component[
-    AmmTransposeNewProperties]:
+    def onChange(self, context: WorkflowContext, oldState: Component[TransposeProperties], newState: Component[TransposeProperties]) -> Component[
+    TransposeProperties]:
         return newState
 
 
-    class AmmTransposeNewCode(ComponentCode):
+    class TransposeCode(ComponentCode):
         def __init__(self, newProps):
-            self.props: AmmTransposeNew.AmmTransposeNewProperties = newProps
+            self.props: Transpose.TransposeProperties = newProps
  
         def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
             import pyspark.sql.functions as F

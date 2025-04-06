@@ -6,5 +6,5 @@ from prophecy.libs import typed_lit
 from transposegempipeline.config.ConfigStore import *
 from transposegempipeline.functions import *
 
-def products_02(spark: SparkSession) -> DataFrame:
+def products_02_2(spark: SparkSession) -> DataFrame:
     return spark.read.option("header", True).option("sep", ",").csv("dbfs:/user/andre/data/products/products_02.csv")

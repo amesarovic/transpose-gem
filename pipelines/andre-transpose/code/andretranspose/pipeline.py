@@ -9,13 +9,9 @@ from andretranspose.graph import *
 def pipeline(spark: SparkSession) -> None:
     df_products_02 = products_02(spark)
     df_products_02_1 = products_02_1(spark)
-    df_AmmTranspose = AmmTranspose(spark, df_products_02_1)
     df_products_02_1_1 = products_02_1_1(spark)
-    df_NoOptTranspose = NoOptTranspose(spark, df_products_02_1_1)
     df_products_50_1_1_1 = products_50_1_1_1(spark)
-    df_Work2Transpose = Work2Transpose(spark, df_products_50_1_1_1)
     df_products_02_2 = products_02_2(spark)
-    df_NewTranspose = NewTranspose(spark, df_products_02_2)
 
 def main():
     spark = SparkSession.builder.enableHiveSupport().appName("andre-transpose").getOrCreate()
