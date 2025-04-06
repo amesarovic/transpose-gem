@@ -69,21 +69,24 @@ class AmmTransposeNew(ComponentSpec):
         def __init__(self, newProps):
             self.props: AmmTransposeNew.AmmTransposeNewProperties = newProps
  
-        def apply(self, spark: SparkSession, df: DataFrame) -> DataFrame:
+        def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
             import pyspark.sql.functions as F
 
-            # NOTE: optimizer doesn't yet support list comprehension
             available_data_columns = []
             for col_name in self.props.value_columns:
-                if col_name in df.columns:
+                if col_name in in0.columns:
                     available_data_columns.append(col_name)
 
             dfs = []
+            keyColumns: SubstitueDisabled = self.props.key_columns
             for data_col_name in available_data_columns:
-                selected_df = df.select([F.col(key_col) for key_col in self.props.key_columns] +
-                                [F.lit(data_col_name).cast("string").alias("name"),
-                                 F.col(data_col_name).cast("string").alias("value")])
-                dfs.append(selected_df)
+                selection: SubstitueDisabled = []
+                for key_col in keyColumns:
+                    selection.append(col(key_col))
+                selection.append(lit(data_col_name).cast("string").alias("Name"))
+                selection.append(col(data_col_name).cast("string").alias("Value"))
+                df_selected: SubstitueDisabled = in0.select(*selection)
+                dfs.append(df_selected)
 
             transposed_df = dfs[0]
             for other_df in dfs[1:]:

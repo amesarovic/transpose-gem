@@ -110,6 +110,12 @@
     "sourcePort" : "gB6hRj2ECenEogLY_Jezc$$wP3TuC3IyJmREzhqV3tve",
     "target" : "UynkcWX7NVcJfWrCd3ytS$$WZpYVtUgeYhQNgpp8KO0A",
     "targetPort" : "fUUlFMYg3-XvUxAo_N_Bb$$mfoGvkR8g6AL0_Juk3kG7"
+  }, {
+    "id" : "JG_wrPvgx6DevQ1_0SOaY$$qOZ_OMHOvGm3VeISSuNnD",
+    "source" : "9SCwy1P4O4L4RZyNQ8vSe$$Tif7sVF3Fk1Zka5t8bSrS",
+    "sourcePort" : "jLPCCJa-OxMlJJIDflvfP$$0oVYFYjQSxcMSVvXc59-m",
+    "target" : "2u1KqLMGK41sLdUbHXTTB$$Kd3d23Sdn96IRo-OvjIMV",
+    "targetPort" : "JkUecdUC4N-M5bRUbxLNy$$cZz6tmdICnW22kEDyPcZN"
   } ],
   "processes" : {
     "lIV2OIel-bSd2fbz0fNdq$$LANmmGn8F0WSkrsK4bO91" : {
@@ -118,7 +124,7 @@
       "metadata" : {
         "label" : "products_02",
         "slug" : "products_02",
-        "x" : -7820,
+        "x" : -7920,
         "y" : -5500,
         "phase" : 0,
         "cache" : false,
@@ -145,8 +151,8 @@
       "metadata" : {
         "label" : "AmmTranspose",
         "slug" : "AmmTranspose",
-        "x" : -8280,
-        "y" : -5500,
+        "x" : -8300,
+        "y" : -5620,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -225,8 +231,8 @@
       "metadata" : {
         "label" : "products_02_1",
         "slug" : "products_02_1",
-        "x" : -8500,
-        "y" : -5500,
+        "x" : -8520,
+        "y" : -5620,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -252,8 +258,8 @@
       "metadata" : {
         "label" : "products_02_1_1",
         "slug" : "products_02_1_1",
-        "x" : -8480,
-        "y" : -5320,
+        "x" : -8500,
+        "y" : -5440,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -279,8 +285,8 @@
       "metadata" : {
         "label" : "NoOptTranspose",
         "slug" : "NoOptTranspose",
-        "x" : -8280,
-        "y" : -5320,
+        "x" : -8300,
+        "y" : -5440,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -359,7 +365,7 @@
       "metadata" : {
         "label" : "products_50_1_1_1",
         "slug" : "products_50_1_1_1",
-        "x" : -7820,
+        "x" : -7920,
         "y" : -5340,
         "phase" : 0,
         "cache" : false,
@@ -386,7 +392,7 @@
       "metadata" : {
         "label" : "Work2Transpose",
         "slug" : "Work2Transpose",
-        "x" : -7680,
+        "x" : -7780,
         "y" : -5340,
         "phase" : 0,
         "cache" : false,
@@ -460,13 +466,93 @@
         "projectName" : "gem-development-transpose"
       }
     },
+    "2u1KqLMGK41sLdUbHXTTB$$Kd3d23Sdn96IRo-OvjIMV" : {
+      "id" : "2u1KqLMGK41sLdUbHXTTB$$Kd3d23Sdn96IRo-OvjIMV",
+      "component" : "AmmTransposeNew",
+      "metadata" : {
+        "label" : "NewTranspose",
+        "slug" : "NewTranspose",
+        "x" : -7780,
+        "y" : -5640,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Transforms product data into a more accessible format, allowing for easier analysis of different product sizes.",
+        "autoUpdateComment" : true,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "JkUecdUC4N-M5bRUbxLNy$$cZz6tmdICnW22kEDyPcZN",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "products",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "small",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "medium",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "large",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "M5QBJahEpGGA8pFAPapna$$uBqpnVp7W9oGbsfa3yAPP",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "pivot_column" : "pivot column",
+        "key_columns" : [ "products" ],
+        "value_columns" : [ "small", "medium", "large" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gems/AmmTransposeNew",
+        "projectName" : "gem-development-transpose"
+      }
+    },
     "IZvO3cJBIDr_iOvrU3S7K$$1zFAoEZS7iasc6HEJjIBm" : {
       "id" : "IZvO3cJBIDr_iOvrU3S7K$$1zFAoEZS7iasc6HEJjIBm",
       "component" : "AmmTransposeWork",
       "metadata" : {
         "label" : "WorkTranspose",
         "slug" : "WorkTranspose",
-        "x" : -7680,
+        "x" : -7780,
         "y" : -5500,
         "phase" : 0,
         "cache" : false,
@@ -538,6 +624,33 @@
       "componentInfo" : {
         "gemId" : "gems/AmmTransposeWork",
         "projectName" : "gem-development-transpose"
+      }
+    },
+    "9SCwy1P4O4L4RZyNQ8vSe$$Tif7sVF3Fk1Zka5t8bSrS" : {
+      "id" : "9SCwy1P4O4L4RZyNQ8vSe$$Tif7sVF3Fk1Zka5t8bSrS",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "products_02_2",
+        "slug" : "products_02_2",
+        "x" : -7920,
+        "y" : -5640,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "jLPCCJa-OxMlJJIDflvfP$$0oVYFYjQSxcMSVvXc59-m",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/products_02"
       }
     }
   },
