@@ -50,7 +50,6 @@ pipelines:
     datasets:
       inputs:
       - datasets/products_02
-      - datasets/products_50
       outputs: []
     subgraphs: []
     dependencies: {}
@@ -176,6 +175,30 @@ gemContainer:
       gemType: ComponentGem
       dependencies: []
       createdAt: '2025-04-06 16:51:48'
+    gems/Limit:
+      name: Limit
+      category: Transform
+      subCategory: ''
+      description: null
+      author: mesarovic.andre@prophecy.io
+      mode: batch
+      files:
+      - mesarovicandreprophecyioteam_gemdevelopmenttranspose/gems/foo.py
+      gemType: ComponentGem
+      dependencies: []
+      createdAt: '2025-04-07 20:12:16'
+    gems/AmmTransposeWork:
+      name: AmmTransposeWork
+      category: Transform
+      subCategory: ''
+      description: null
+      author: mesarovic.andre@prophecy.io
+      mode: batch
+      files:
+      - mesarovicandreprophecyioteam_gemdevelopmenttranspose/gems/AmmTransposeWork.py
+      gemType: ComponentGem
+      dependencies: []
+      createdAt: '2025-04-09 02:51:01'
   dependencies: null
 functions:
   author: null

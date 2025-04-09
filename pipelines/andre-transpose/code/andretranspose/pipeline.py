@@ -7,11 +7,8 @@ from prophecy.utils import *
 from andretranspose.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    df_products_02 = products_02(spark)
     df_products_02_1 = products_02_1(spark)
-    df_products_02_1_1 = products_02_1_1(spark)
-    df_products_50_1_1_1 = products_50_1_1_1(spark)
-    df_products_02_2 = products_02_2(spark)
+    df_transpose_product_data = transpose_product_data(spark, df_products_02_1)
 
 def main():
     spark = SparkSession.builder.enableHiveSupport().appName("andre-transpose").getOrCreate()
