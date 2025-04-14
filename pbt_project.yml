@@ -81,6 +81,19 @@ pipelines:
       outputs: []
     subgraphs: []
     dependencies: {}
+  pipelines/sql-gem-test:
+    name: sql-gem-test
+    description: ''
+    author: mesarovic.andre@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2025-04-10 17:34:39'
+    datasets:
+      inputs: []
+      outputs: []
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/customers:
     name: customers
